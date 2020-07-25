@@ -1,0 +1,16 @@
+{% extends "html.html" %}
+
+{% block content %}
+
+<h1>welcome</h1>
+
+{% for post in posts %}
+<div>
+{{ post.title }}
+{{ post.category }}
+{{ post.thumb }}
+{{ post.date }}
+</div>
+{% endfor %}
+
+{% endblock %}
