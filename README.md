@@ -13,4 +13,5 @@ This is a hand-rolled static site generator. Run *generate.py* to generate the w
 ## Todo
 
 [ ] styling 
+[ ] cheetsheat
 [ ] lots ...
