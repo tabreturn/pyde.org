@@ -4,7 +4,7 @@
 
 This repository hosts the source files for pyde.tabreturn.com -- which includes Python Mode ports of the Java examples on the official [Processing wesbite](https://processing.org/examples/) presented in format resembling the [Generative Design website](http://www.generative-gestaltung.de/2/).
 
-You can view the [live website here](http://pyde.tabreturn.com).
+<!-- You can view the [live website here](http://pyde.tabreturn.com). -->
 
 ## Instructions
 
