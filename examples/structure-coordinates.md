@@ -2,7 +2,7 @@
 title: Coordinates
 category: structure
 thumb: img/cond-milk-cake.jpg
-date: 2019-04-15
+updated: 2019-04-15
 ---
 
 ## Coordinates

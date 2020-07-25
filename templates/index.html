@@ -1,15 +1,15 @@
-{% extends "html.html" %}
+{% extends 'html.html' %}
 
 {% block content %}
 
 <h1>welcome</h1>
 
-{% for post in posts %}
+{% for content in contents %}
 <div>
-{{ post.title }}
-{{ post.category }}
-{{ post.thumb }}
-{{ post.date }}
+{{ content.title }}
+{{ content.category }}
+{{ content.thumb }}
+{{ content.date }}
 </div>
 {% endfor %}
 

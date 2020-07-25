@@ -2,7 +2,7 @@
 title: Statements and Comments
 category: structure
 thumb: img/cond-milk-cake.jpg
-date: 2019-04-15
+updated: 2019-04-15
 ---
 
 ## Statements and Comments
