@@ -1,7 +1,7 @@
 ---
 title: Coordinates
 category: structure
-thumb: img/cond-milk-cake.jpg
+thumb: structure_coordinates.png
 updated: 2019-04-15
 ---
 

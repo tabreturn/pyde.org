@@ -2,15 +2,20 @@
 
 {% block content %}
 
-<h1>welcome</h1>
+<header>
+  <h1>Examples. Short, prototypical programs exploring the basics of programming with Processing.</h1>
+</header>
 
-{% for content in contents %}
-<div>
-{{ content.title }}
-{{ content.category }}
-{{ content.thumb }}
-{{ content.date }}
-</div>
+<div id="thumbnails">
+{% for eg in contents %}
+  <a href="{{eg.thumb}}">
+    <div class="thumbnail">
+      <img src="{{eg.thumb}}" alt="{{eg.title}}" width="100%" /> 
+      {{eg.category}}: 
+      {{eg.title}}
+    </div>
+  </a>
 {% endfor %}
+</div>
 
 {% endblock %}

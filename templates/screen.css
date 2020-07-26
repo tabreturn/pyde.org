@@ -1,3 +1,32 @@
+* { outline: 1px solid lime }
+
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta&display=swap');
+
+:root {
+  --theme_color_1: red;
+  --theme_color_2: yellow;
+  --theme_color_3: blue;
+}
+
 body {
-  background-color: red;
+  background-color: var(--theme_color_2);
+  font-family: 'Enriqueta', serif;
+}
+
+header {
+  max-width: 1200px;
+  margin: auto;
+}
+
+#thumbnails {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#thumbnails .thumbnail {
+  background-color: var(--theme_color_1);
+  padding: 10px;
 }
