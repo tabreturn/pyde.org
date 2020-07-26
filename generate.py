@@ -4,6 +4,7 @@ import subprocess
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
+from pyp5js.commands import transcrypt_sketch
 
 # create _site directory
 
@@ -65,8 +66,7 @@ asset_paths = ['examples', 'templates']
 
 for eg_filename in examples.keys():
     no_ext = eg_filename[0:-3]
-    process = subprocess.Popen('pyp5js transcrypt {}'.format(no_ext).split())
-    output, error = process.communicate()
+    transcrypt_sketch(no_ext)
     shutil.copytree('examples/{}'.format(no_ext), os.path.join('_site', no_ext))
 
 # copy static assets into _site directory
