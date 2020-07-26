@@ -1,6 +1,5 @@
 import os
 import shutil
-import subprocess
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
