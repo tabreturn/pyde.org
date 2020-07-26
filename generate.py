@@ -67,6 +67,7 @@ for eg_filename in examples.keys():
     no_ext = eg_filename[0:-3]
     transcrypt_sketch(no_ext)
     shutil.copytree('examples/{}'.format(no_ext), os.path.join('_site', no_ext))
+    shutil.rmtree('examples/{}/target'.format(no_ext))
 
 # copy static assets into _site directory
 
