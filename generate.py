@@ -1,13 +1,16 @@
 import os
 import shutil
+import subprocess
 from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
 
 # create _site directory
 
-if not os.path.exists('_site'):
-    os.makedirs('_site')
+if os.path.exists('_site'):
+    shutil.rmtree('_site')
+
+os.makedirs('_site')
 
 examples = {}
 
@@ -45,16 +48,26 @@ for eg in examples:
     contents = {
       'content': examples[eg],
       'title': metadata['title'],
+      'category': metadata['category'],
       'updated': metadata['updated'],
+      'filename': metadata['title'].lower().replace(' ', '_')
     }
     example_html = templates['example'].render(contents=contents)
-    path = '_site/{}.html'.format(metadata['title'])
+    path = '_site/{}.html'.format(contents['filename'])
     os.makedirs(os.path.dirname(path), exist_ok=True)
 
     with open(path, 'w') as file:
         file.write(example_html)
 
 asset_paths = ['examples', 'templates']
+
+# generate js sketches and copy into _site directory
+
+for eg_filename in examples.keys():
+    no_ext = eg_filename[0:-3]
+    process = subprocess.Popen('pyp5js transcrypt {}'.format(no_ext).split())
+    output, error = process.communicate()
+    shutil.copytree('examples/{}'.format(no_ext), os.path.join('_site', no_ext))
 
 # copy static assets into _site directory
 

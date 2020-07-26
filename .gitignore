@@ -1,4 +1,5 @@
 env/
+examples/*/target/
 __pycache__/
 output/
 _site/

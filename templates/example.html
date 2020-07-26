@@ -5,6 +5,9 @@
 <h1>{{contents.title}}</h1>
 <small>{{contents.date}}</small>
 {{contents.content}}
-</p>
+
+<script src="p5.min.js"></script>
+<script src="{{contents.category}}_{{contents.filename}}/target/target_sketch.js" type="module"></script>
+<div id="sketch-holder"><!-- sketch appears here --></div>
 
 {% endblock %}
