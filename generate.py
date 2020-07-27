@@ -27,7 +27,7 @@ for eg in os.listdir('examples'):
         content += '</pre>'
         metadata = {
           'name': eg,
-          'category': eg.split('__')[0].replace('_', ' '), 
+          'category': eg.split('__')[0].replace('_', ' '),
           'title': eg.split('__')[1].replace('_', ' '),
           'image': 'image.png'
         }
