@@ -7,12 +7,12 @@
 </header>
 
 <div id="thumbnails">
-{% for eg in contents %}
-  <a href="{{eg.thumb}}">
+{% for data in metadata %}
+  <a href="{{data.name}}/{{data.name}}.html">
     <div class="thumbnail">
-      <img src="{{eg.thumb}}" alt="{{eg.title}}" width="100%" /> 
-      {{eg.category}}: 
-      {{eg.title}}
+      <img src="{{data.name}}/{{data.image}}" alt="{{data.title}}" width="100%" /> 
+      {{data.category}}: 
+      {{data.title|title}}
     </div>
   </a>
 {% endfor %}

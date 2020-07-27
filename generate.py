@@ -1,9 +1,10 @@
 import os
 import shutil
-from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
 from pyp5js.commands import transcrypt_sketch
+
+examples = {}
 
 # create _site directory
 
@@ -12,17 +13,28 @@ if os.path.exists('_site'):
 
 os.makedirs('_site')
 
-examples = {}
-
 # load examples markdown into examples dictionary
 
 for eg in os.listdir('examples'):
+    eg_directory = os.path.join('examples', eg)
+    eg_description = os.path.join(eg_directory, 'description.md')
+    eg_sketch = os.path.join(eg_directory, eg+'.py')
 
-    if eg.endswith('.md'):
-
-        with open(os.path.join('examples', eg), 'r') as file:
-            extras = ['metadata', 'fenced-code-blocks']
-            examples[eg] = markdown(file.read(), extras=extras)
+    with open(eg_description, 'r') as file:
+        content = markdown(file.read())
+        content += '<pre>\n'
+        content += open(eg_sketch, 'r').read()
+        content += '</pre>'
+        metadata = {
+          'name': eg,
+          'category': eg.split('__')[0].replace('_', ' '), 
+          'title': eg.split('__')[1].replace('_', ' '),
+          'image': 'image.png'
+        }
+        examples[eg] = {
+          'content': content,
+          'metadata': metadata
+        }
 
 # load templates
 
@@ -35,46 +47,35 @@ templates = {
 
 # generate landing page
 
-metadata = [examples[eg].metadata for eg in examples]
-index_html = templates['index'].render(contents=metadata)
+metadata_all = [eg['metadata'] for eg in examples.values()]
+index_html = templates['index'].render(metadata=metadata_all)
 
 with open('_site/index.html', 'w') as file:
     file.write(index_html)
 
-# generate example pages
+# generate example pages and js sketches
 
-for eg in examples:
-    metadata = examples[eg].metadata
-    contents = {
-      'content': examples[eg],
-      'title': metadata['title'],
-      'category': metadata['category'],
-      'updated': metadata['updated'],
-      'filename': metadata['title'].lower().replace(' ', '_')
-    }
-    example_html = templates['example'].render(contents=contents)
-    path = '_site/{}.html'.format(contents['filename'])
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+for eg_page in examples.values():
+    eg_html = templates['example'].render(content=eg_page)
+    eg_name = eg_page['metadata']['name']
+    eg_path = os.path.join('_site', eg_name)
+    os.makedirs(eg_path)
+    png_source = os.path.join('examples', eg_name, 'image.png')
+    png_destination = os.path.join('_site', eg_name, 'image.png')
+    shutil.copyfile(png_source, png_destination)
 
-    with open(path, 'w') as file:
-        file.write(example_html)
+    with open(os.path.join(eg_path, eg_name+'.html'), 'w') as file:
+        file.write(eg_html)
 
-asset_paths = ['examples', 'templates']
-
-# generate js sketches and copy into _site directory
-
-for eg_filename in examples.keys():
-    no_ext = eg_filename[0:-3]
-    transcrypt_sketch(no_ext)
-    shutil.copytree('examples/{}'.format(no_ext), os.path.join('_site', no_ext))
-    shutil.rmtree('examples/{}/target'.format(no_ext))
+    transcrypt_sketch(eg_name)
+    js_source = os.path.join('examples', eg_name, 'target')
+    js_destination = os.path.join('_site', eg_name, 'target')
+    shutil.copytree(js_source, js_destination)
+    shutil.rmtree(js_source)
 
 # copy static assets into _site directory
 
-for path in asset_paths:
-
-    for asset in os.listdir(path):
-
-        if asset.endswith(('.css', '.js', '.png')):
-            site_path = os.path.join(path, asset)
-            shutil.copy(site_path, os.path.join('_site', asset))
+for asset in os.listdir('static'):
+    asset_source = os.path.join('static', asset)
+    asset_destination = os.path.join('_site', asset)
+    shutil.copyfile(asset_source, asset_destination)
