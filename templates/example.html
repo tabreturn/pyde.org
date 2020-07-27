@@ -1,9 +1,12 @@
 {% extends 'html.html' %}
 
+{% block title %}{{contents.metadata.title|title}}{% endblock %}
+
 {% block content %}
 
-<h1>{{content.title|title}}</h1>
-{{content.content}}
+<h1>{{contents.metadata.title|title}}</h1>
+
+{{contents.content}}
 
 <script src="../p5.min.js"></script>
 <script src="target/target_sketch.js" type="module"></script>

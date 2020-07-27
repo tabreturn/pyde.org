@@ -1,4 +1,2 @@
-## Coordinates
-
 lorem ipsum
 

@@ -56,7 +56,7 @@ with open('_site/index.html', 'w') as file:
 # generate example pages and js sketches
 
 for eg_page in examples.values():
-    eg_html = templates['example'].render(content=eg_page)
+    eg_html = templates['example'].render(contents=eg_page)
     eg_name = eg_page['metadata']['name']
     eg_path = os.path.join('_site', eg_name)
     os.makedirs(eg_path)
