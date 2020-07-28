@@ -21,6 +21,7 @@ This is a hand-rolled static site generator. Run *generate.py* to generate the w
 - [ ] style website
   - [ ] define colors and fonts with inspiration from the processing.org website
   - [ ] define layout with inspiration from generative design (new book) website
+  - [ ] refine pygments highlighting
   - [ ] ...
 - [ ] design cheetsheat
   - [ ] see oc/temp files
