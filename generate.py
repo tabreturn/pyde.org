@@ -2,7 +2,10 @@ import os
 import re
 import shutil
 from jinja2 import Environment, FileSystemLoader
+from lexer import ProcessingPyLexer
 from markdown2 import markdown
+from pygments import highlight
+from pygments.formatters import HtmlFormatter
 from pyp5js.commands import transcrypt_sketch
 
 examples = {}
@@ -24,9 +27,11 @@ for eg in os.listdir('examples'):
     with open(eg_description, 'r') as file:
         content = markdown(file.read())
         content += '<pre>\n'
-        content += open(eg_sketch, 'r').read()
-        content = re.sub('from pyp5js import .*\n*', '', content)
-        content = re.sub('createCanvas', 'size', content)
+        sketch_code = open(eg_sketch, 'r').read()
+        sketch_code = re.sub('from pyp5js import .*\n*', '', sketch_code)
+        sketch_code = re.sub('createCanvas', 'size', sketch_code)
+        sketch_code = highlight(sketch_code, ProcessingPyLexer(), HtmlFormatter())
+        content += sketch_code
         content += '</pre>'
         metadata = {
           'name': eg,
