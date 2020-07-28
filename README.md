@@ -16,6 +16,7 @@ This is a hand-rolled static site generator. Run *generate.py* to generate the w
   - [x] refactor generate.py
   - [x] generate example directories from md (then compile and move them into _site)
   - [x] replace p5js functions in transcrypted code to processing.py -- i.e. `createCanvas()` to `size()`
+  - [ ] make canvas responsive for mobile
   - [ ] ...
 - [ ] style website
   - [ ] define colors and fonts with inspiration from the processing.org website
