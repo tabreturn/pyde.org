@@ -1,4 +1,5 @@
 import os
+import re
 import shutil
 from jinja2 import Environment, FileSystemLoader
 from markdown2 import markdown
@@ -24,6 +25,8 @@ for eg in os.listdir('examples'):
         content = markdown(file.read())
         content += '<pre>\n'
         content += open(eg_sketch, 'r').read()
+        content = re.sub('from pyp5js import .*\n*', '', content)
+        content = re.sub('createCanvas', 'size', content)
         content += '</pre>'
         metadata = {
           'name': eg,
