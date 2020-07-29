@@ -19,6 +19,7 @@ This is a hand-rolled static site generator. Run *generate.py* to generate the w
   - [ ] make canvas responsive for mobile
   - [ ] ...
 - [ ] style website
+  - [ ] add footer (with credits for processing, pyp5js, github repo)
   - [ ] define colors and fonts with inspiration from the processing.org website
   - [ ] define layout with inspiration from generative design (new book) website
   - [ ] refine pygments highlighting
