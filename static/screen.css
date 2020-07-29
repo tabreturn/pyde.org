@@ -35,6 +35,10 @@ h1 {
   margin-bottom: 1.2em;
 }
 
+p {
+  line-height: 1.5em;
+}
+
 code, pre {
   font-family: 'Source Code Pro', monospace;
 }
@@ -63,9 +67,17 @@ code, pre {
 }
 
 #thumbnails .thumbnail p {
-  height: 3em;
+  height: 2.6em;
+  line-height: 1.2em;
   margin: 0;
   padding-top: 0.3em;
+}
+
+#example .highlight {
+  background-color: var(--theme_color_2);
+  border-radius: 3px;
+  font-size: 0.9em;
+  padding: 0.1em 1em;
 }
 
 /* media queries */
