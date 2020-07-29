@@ -34,10 +34,11 @@ for eg in sorted(os.listdir('examples')):
         content += sketch_code
         content += '</pre>'
         metadata = {
-          'name': eg,
+          'file_name': eg,
           'category': eg.split('__')[0].replace('_', ' '),
-          'title': eg.split('__')[1].replace('_', ' '),
-          'image': 'image.png'
+          'index': eg.split('__')[1].replace('_', ' ')[:2],
+          'title': eg.split('__')[1].replace('_', ' ')[3:],
+          'image': 'canvas.png'
         }
         examples[eg] = {
           'content': content,
@@ -65,7 +66,7 @@ with open('_site/index.html', 'w') as file:
 
 for eg_page in examples.values():
     eg_html = templates['example'].render(contents=eg_page)
-    eg_name = eg_page['metadata']['name']
+    eg_name = eg_page['metadata']['file_name']
     eg_path = os.path.join('_site', eg_name)
     os.makedirs(eg_path)
     png_source = os.path.join('examples', eg_name, 'canvas.png')
