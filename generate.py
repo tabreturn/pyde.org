@@ -19,7 +19,7 @@ os.makedirs('_site')
 
 # load examples markdown into examples dictionary
 
-for eg in os.listdir('examples'):
+for eg in sorted(os.listdir('examples')):
     eg_directory = os.path.join('examples', eg)
     eg_description = os.path.join(eg_directory, 'description.md')
     eg_sketch = os.path.join(eg_directory, eg+'.py')
@@ -68,8 +68,8 @@ for eg_page in examples.values():
     eg_name = eg_page['metadata']['name']
     eg_path = os.path.join('_site', eg_name)
     os.makedirs(eg_path)
-    png_source = os.path.join('examples', eg_name, 'image.png')
-    png_destination = os.path.join('_site', eg_name, 'image.png')
+    png_source = os.path.join('examples', eg_name, 'canvas.png')
+    png_destination = os.path.join('_site', eg_name, 'canvas.png')
     shutil.copyfile(png_source, png_destination)
 
     with open(os.path.join(eg_path, eg_name+'.html'), 'w') as file:

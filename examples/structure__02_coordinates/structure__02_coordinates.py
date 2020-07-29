@@ -5,6 +5,7 @@ def setup():
     # Sets the screen to be 640 pixels wide and 360 pixels high
     createCanvas(640, 360)
 
+
 def draw():
     # Set the background to black and turn off the fill color
     background(0)
