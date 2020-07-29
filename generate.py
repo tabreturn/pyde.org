@@ -25,14 +25,6 @@ for eg in sorted(os.listdir('examples')):
     eg_sketch = os.path.join(eg_directory, eg+'.py')
 
     with open(eg_description, 'r') as file:
-        content = markdown(file.read())
-        content += '<pre>\n'
-        sketch_code = open(eg_sketch, 'r').read()
-        sketch_code = re.sub('from pyp5js import .*\n*', '', sketch_code)
-        sketch_code = re.sub('createCanvas', 'size', sketch_code)
-        sketch_code = highlight(sketch_code, ProcessingPyLexer(), HtmlFormatter())
-        content += sketch_code
-        content += '</pre>'
         metadata = {
           'file_name': eg,
           'category': eg.split('__')[0].replace('_', ' '),
@@ -40,9 +32,15 @@ for eg in sorted(os.listdir('examples')):
           'title': eg.split('__')[1].replace('_', ' ')[3:],
           'image': 'canvas.png'
         }
+        sketch_code = open(eg_sketch, 'r').read()
+        sketch_code = re.sub('from pyp5js import .*\n*', '', sketch_code)
+        sketch_code = re.sub('createCanvas', 'size', sketch_code)
+        sketch_code = highlight(sketch_code, ProcessingPyLexer(), HtmlFormatter())
+        description = markdown(file.read())
         examples[eg] = {
-          'content': content,
-          'metadata': metadata
+          'metadata': metadata,
+          'sketch_code': sketch_code,
+          'description': description
         }
 
 # load templates

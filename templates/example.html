@@ -12,10 +12,11 @@
 </header>
 
 <div id="example">
-    <script src="../p5.min.js"></script>
-    <script src="target/target_sketch.js" type="module"></script>
-    <div id="sketch-holder"><!-- sketch appears here --></div>
-    {{contents.content}}
+  {{contents.description}}
+  <script src="../p5.min.js"></script>
+  <script src="target/target_sketch.js" type="module"></script>
+  <div id="sketch-holder"><!-- sketch appears here --></div>
+  {{contents.sketch_code}}
 </div>
 
 {% endblock %}
