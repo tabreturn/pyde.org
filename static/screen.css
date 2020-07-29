@@ -39,6 +39,10 @@ p {
   line-height: 1.5em;
 }
 
+p:first-of-type {
+  margin-top: 0;
+}
+
 code, pre {
   font-family: 'Source Code Pro', monospace;
 }
