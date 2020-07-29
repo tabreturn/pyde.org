@@ -1,20 +1,48 @@
-* { outline: 1px solid lime }
+/* fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Enriqueta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+/* color theme */
 
 :root {
-  --theme_color_1: red;
-  --theme_color_2: yellow;
-  --theme_color_3: blue;
+  --theme_color_1: #142A3D;
+  --theme_color_2: #FFFFFF;
+  --theme_color_3: #EBFFFD;
+  --theme_color_4: #818B95;
 }
 
+/* tag selectors */
+
 body {
-  background-color: var(--theme_color_2);
+  background-color: var(--theme_color_3);
+  color: var(--theme_color_1);
   font-family: 'Enriqueta', serif;
+  padding-top: 1em;
+}
+
+a {
+  color: inherit;
 }
 
 header {
-  max-width: 1200px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 1.2em;
+}
+
+code, pre {
+  font-family: 'Source Code Pro', monospace;
+}
+
+/* class, id, etc. selectors */
+
+#thumbnails, #example {
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -22,13 +50,22 @@ header {
   display: grid;
   grid-column-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
-  max-width: 1200px;
-  margin: auto;
 }
 
 #thumbnails .thumbnail {
   background-color: var(--theme_color_1);
+  border-radius: 3px;
+  color: var(--theme_color_2);
+  display: block;
   padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+#thumbnails .thumbnail p {
+  height: 3em;
+  margin: 0;
+  padding-top: 0.3em;
 }
 
 /* media queries */

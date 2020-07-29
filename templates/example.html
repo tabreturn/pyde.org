@@ -4,12 +4,18 @@
 
 {% block content %}
 
-<h1>{{contents.metadata.title|title}}</h1>
+<header>
+  <code><em>
+    # Python Mode versions of the examples on the <a href="https://processing.org/examples/">processing.org</a> website.
+  </em></code>
+  <h1>{{contents.metadata.title|title}}</h1>
+</header>
 
-{{contents.content}}
-
-<script src="../p5.min.js"></script>
-<script src="target/target_sketch.js" type="module"></script>
-<div id="sketch-holder"><!-- sketch appears here --></div>
+<div id="example">
+    <script src="../p5.min.js"></script>
+    <script src="target/target_sketch.js" type="module"></script>
+    <div id="sketch-holder"><!-- sketch appears here --></div>
+    {{contents.content}}
+</div>
 
 {% endblock %}

@@ -5,19 +5,17 @@
 {% block content %}
 
 <header>
-  <h1>Examples. Short, prototypical programs exploring the basics of programming with Processing.py.</h1>
-  <p>
-    Python Mode versions of the examples on the <a href="https://processing.org/examples/">processing.org</a> website.
-  </p>
+  <code><em>
+    # Python Mode versions of the examples on the <a href="https://processing.org/examples/">processing.org</a> website.
+  </em></code>
+  <h1>Short, prototypical programs exploring the basics of programming with Processing.py.</h1>
 </header>
 
 <div id="thumbnails">
 {% for data in metadata %}
-  <a href="{{data.file_name}}/{{data.file_name}}.html">
-    <div class="thumbnail">
-      <img src="{{data.file_name}}/{{data.image}}" alt="{{data.title}}" width="100%" /> 
-      {{data.title|title}}
-    </div>
+  <a href="{{data.file_name}}/{{data.file_name}}.html" class="thumbnail">
+    <img src="{{data.file_name}}/{{data.image}}" alt="{{data.title}}" width="100%" />
+    <p>{{data.title|title}}</p>
   </a>
 {% endfor %}
 </div>
