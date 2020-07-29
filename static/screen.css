@@ -21,7 +21,7 @@ header {
 #thumbnails {
   display: grid;
   grid-column-gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   max-width: 1200px;
   margin: auto;
 }
@@ -29,4 +29,27 @@ header {
 #thumbnails .thumbnail {
   background-color: var(--theme_color_1);
   padding: 10px;
+}
+
+/* media queries */
+
+@media (min-width: 576px) {
+
+  #thumbnails {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+
+  #thumbnails {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+
+  #thumbnails {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
