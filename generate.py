@@ -40,6 +40,11 @@ from pyp5js.config import SKETCHBOOK_DIR
 
 EXAMPLES_DIR = os.path.abspath(os.path.join(SKETCHBOOK_DIR, os.pardir))
 
+# delete any partially transcribed files from a previous run
+
+if os.path.exists(SKETCHBOOK_DIR):
+    shutil.rmtree(SKETCHBOOK_DIR)
+
 # create _site directory
 
 SITE_DIR = '_site'
@@ -86,10 +91,37 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
 for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     transcrypt_sketch(temp_sketch)
 
+# move transcribed sketches to _site directory
+
+for temp_sketch in os.listdir(SKETCHBOOK_DIR):
+    source_dir = os.path.join(SKETCHBOOK_DIR, temp_sketch, 'target')
+    target_dir = os.path.join(SITE_DIR, temp_sketch)
+    shutil.move(source_dir, target_dir)
+
+shutil.rmtree(SKETCHBOOK_DIR)
+
+
+'''
+# load templates
+
+env = Environment(loader=FileSystemLoader('templates'))
+
+templates = {
+  'index': env.get_template('index.html'),
+  'example': env.get_template('example.html'),
+}
+
+# generate landing page
+
+metadata_all = [eg['metadata'] for eg in examples.values()]
+index_html = templates['index'].render(metadata=metadata_all)
+
+with open('_site/index.html', 'w') as file:
+    file.write(index_html)
+'''
 
 '''
 
-#shutil.rmtree(SKETCHBOOK_DIR)
 
 for group in os.listdir(category_directory):
     group_directory = os.path.join(examples_directory, category)
@@ -146,22 +178,7 @@ for eg in sorted(os.listdir('examples')):
           'description': description
         }
 
-# load templates
 
-env = Environment(loader=FileSystemLoader('templates'))
-
-templates = {
-  'index': env.get_template('index.html'),
-  'example': env.get_template('example.html'),
-}
-
-# generate landing page
-
-metadata_all = [eg['metadata'] for eg in examples.values()]
-index_html = templates['index'].render(metadata=metadata_all)
-
-with open('_site/index.html', 'w') as file:
-    file.write(index_html)
 
 # generate example pages and js sketches
 
