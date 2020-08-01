@@ -1,21 +1,124 @@
+'''
+The example sketch files are retrieved from:
+https://github.com/jdf/processing.py/tree/master/mode/examples and placed in 
+the "examples" directory.
+
+There are some sketches that are problematic that you'll need to delete. Many 
+of fail because of the way they're organized (directory structure) which 
+shouldn't be difficult to fix at some point in the future. This program expects
+sketch to be organized as:
+
+*category > sub-category > sketch*
+
+For example:
+
+*Basics > Camera > MoveEye*
+
+Delete the directories:
+* Advanced (directory structure incompatible)
+* Contributed Libraries in Python (I still need to look at libraries)
+* Python Mode Differences (directory structure incompatible)
+
+Also, delete:
+* Topics/ContinuousLines (directory structure incompatible)
+* Topics/Pattern (directory structure incompatible)
+* Topics/Pulses (directory structure incompatible)
+* Topics/File IO/LoadFile2 (can't import from module 'collections')
+'''
+
 import os
 import re
 import shutil
+
 from jinja2 import Environment, FileSystemLoader
 from lexer import ProcessingPyLexer
 from markdown2 import markdown
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pyp5js.commands import transcrypt_sketch
+from pyp5js.config import SKETCHBOOK_DIR
 
-examples = {}
+EXAMPLES_DIR = os.path.abspath(os.path.join(SKETCHBOOK_DIR, os.pardir))
 
 # create _site directory
 
-if os.path.exists('_site'):
-    shutil.rmtree('_site')
+SITE_DIR = '_site'
 
-os.makedirs('_site')
+if os.path.exists(SITE_DIR):
+    shutil.rmtree(SITE_DIR)
+
+os.makedirs(SITE_DIR)
+
+# rename and copy sketches to _temp directory
+
+for category in os.listdir(EXAMPLES_DIR):
+    
+    category_dir = os.path.join(EXAMPLES_DIR, category)
+    
+    for sub_category in os.listdir(category_dir):
+        # rename any sub-category paths incompatible with pyp5js
+        sc_words = sub_category.split()
+        sc_title = ' '.join(word[0].upper() + word[1:] for word in sc_words)
+        sc_final =  sc_title.replace(' ', '').replace('-', '_')
+        
+        sub_category_dir = os.path.join(EXAMPLES_DIR, category, sub_category)
+
+        for sketch in os.listdir(sub_category_dir):
+            sketch_path = os.path.join(sub_category_dir, sketch)
+            new_name = '{}__{}__{}'.format(category, sc_final, sketch)
+            shutil.copytree(sketch_path, os.path.join(SKETCHBOOK_DIR, new_name))
+
+# rename .pyde extensions (in _temp directory) to .py
+
+for temp_sketch in os.listdir(SKETCHBOOK_DIR):
+    temp_sketch_dir = os.path.join(SKETCHBOOK_DIR, temp_sketch)
+
+    for sketch_file in os.listdir(temp_sketch_dir):
+
+        if sketch_file[-5:] == '.pyde':
+            os.rename(
+              os.path.join(temp_sketch_dir, sketch_file), 
+              os.path.join(temp_sketch_dir, temp_sketch + '.py')
+            )
+
+# transcribe sketches using pyp5js
+
+for temp_sketch in os.listdir(SKETCHBOOK_DIR):
+    transcrypt_sketch(temp_sketch)
+
+
+'''
+
+#shutil.rmtree(SKETCHBOOK_DIR)
+
+for group in os.listdir(category_directory):
+    group_directory = os.path.join(examples_directory, category)
+    examples[category][group] = {}
+
+
+category_directory = os.path.join(examples_directory, category)
+
+for group in os.listdir(category_directory):
+    group_directory = os.path.join(examples_directory, category)
+    examples[category][group] = {}
+      
+        for sketch in os.listdir(group_directory):
+            print(category + '|' + group + '|' + sketch)
+            sketch_file = os.path.join(group_directory, sketch, sketch+'.pde')
+            examples[category][group][sketch] = {}
+            
+            #print(sketch_file)
+            #with open(sketch_file, 'r') as f:
+            #    print(f.read())
+ 
+            
+        
+file='.env'
+with open(file, 'w') as filetowrite:
+    filetowrite.write("SKETCHBOOK_DIR = './examples/Basics/Structure'") 
+
+eg_name = 'Coordinates'
+transcrypt_sketch(eg_name)
 
 # load examples markdown into examples dictionary
 
@@ -86,3 +189,4 @@ for asset in os.listdir('static'):
     asset_source = os.path.join('static', asset)
     asset_destination = os.path.join('_site', asset)
     shutil.copyfile(asset_source, asset_destination)
+'''
