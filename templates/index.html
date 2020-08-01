@@ -13,9 +13,8 @@
 
 <div id="thumbnails">
 {% for data in metadata %}
-  <a href="{{data.file_name}}/{{data.file_name}}.html" class="thumbnail">
-    <img src="{{data.file_name}}/{{data.image}}" alt="{{data.title}}" width="100%" />
-    <p>{{data.title|title}}</p>
+  <a href="{{data.file_name}}/" class="thumbnail">
+    <p>{{data.category}}<br />{{data.title}}</p>
   </a>
 {% endfor %}
 </div>

@@ -89,6 +89,18 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
 # transcribe sketches using pyp5js
 
 for temp_sketch in os.listdir(SKETCHBOOK_DIR):
+    sketch_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, temp_sketch+'.py')
+    
+    fin = open(sketch_file, 'rt')
+    data = fin.read()
+    data = data.replace('size(', 'createCanvas(')
+    fin.close()
+    fin = open(sketch_file, 'wt')
+    fin.write(data)
+    fin.close()
+
+    
+
     transcrypt_sketch(temp_sketch)
 
 # move transcribed sketches to _site directory
@@ -100,8 +112,6 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
 
 shutil.rmtree(SKETCHBOOK_DIR)
 
-
-'''
 # load templates
 
 env = Environment(loader=FileSystemLoader('templates'))
@@ -113,42 +123,49 @@ templates = {
 
 # generate landing page
 
-metadata_all = [eg['metadata'] for eg in examples.values()]
+metadata_all = []
+
+for sketch in os.listdir(SITE_DIR):
+    cat_subcat_sketch = sketch.split('__') 
+    metadata_all.append({
+      'file_name': sketch,
+      'category': cat_subcat_sketch[0],
+      'sub_category': cat_subcat_sketch[1],
+      'title': cat_subcat_sketch[2]
+    })
+
 index_html = templates['index'].render(metadata=metadata_all)
 
-with open('_site/index.html', 'w') as file:
+with open(os.path.join(SITE_DIR, 'index.html'), 'w') as file:
     file.write(index_html)
-'''
 
-'''
+# copy static assets into _site directory
+
+for asset in os.listdir('static'):
+    asset_source = os.path.join('static', asset)
+    asset_destination = os.path.join(SITE_DIR, asset)
+    shutil.copyfile(asset_source, asset_destination)
+    
+# generate example pages
+
+for example in metadata_all:
+    example_dir = os.path.join(SITE_DIR, example['file_name'])
+    
+    example_description = 'a'
+    example_code = 'b'
+    
+    
+    
+    
+    example_html = templates['example'].render(contents=example)
+    
+    with open(os.path.join(example_dir, 'index.html'), 'w') as file:
+        file.write(example_html)
 
 
-for group in os.listdir(category_directory):
-    group_directory = os.path.join(examples_directory, category)
-    examples[category][group] = {}
 
 
-category_directory = os.path.join(examples_directory, category)
-
-for group in os.listdir(category_directory):
-    group_directory = os.path.join(examples_directory, category)
-    examples[category][group] = {}
-      
-        for sketch in os.listdir(group_directory):
-            print(category + '|' + group + '|' + sketch)
-            sketch_file = os.path.join(group_directory, sketch, sketch+'.pde')
-            examples[category][group][sketch] = {}
-            
-            #print(sketch_file)
-            #with open(sketch_file, 'r') as f:
-            #    print(f.read())
- 
-            
-        
-file='.env'
-with open(file, 'w') as filetowrite:
-    filetowrite.write("SKETCHBOOK_DIR = './examples/Basics/Structure'") 
-
+'''     
 eg_name = 'Coordinates'
 transcrypt_sketch(eg_name)
 
