@@ -16,8 +16,13 @@
 
 body {
   background-color: var(--theme_color_3);
+  background-image: url(bg.svg);
+  background-position-y: -100px;
+  background-repeat: repeat-x;
+  background-size: 2500px;
   color: var(--theme_color_1);
   font-family: 'Enriqueta', serif;
+  margin: 1em;
   padding-top: 1em;
 }
 
@@ -31,8 +36,10 @@ header {
 }
 
 h1 {
+  background-color: var(--theme_color_3);
   font-size: 2.5em;
-  margin-bottom: 1.2em;
+  margin: 3em 0;
+  padding: 1em 0.8em;
 }
 
 p {
