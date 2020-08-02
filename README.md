@@ -52,4 +52,6 @@ You'll need to delete or reorganise the following:
   - [ ] see oc/temp files
   - [ ] ...
 - [ ] add readme screenshot
+- [ ] fix
+  - [ ] example page code listing must display original code (i.e. unindented with no setup and draw)
 - [ ] other ...
