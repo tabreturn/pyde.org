@@ -12,7 +12,7 @@ Install the relevant Python 3 libraries (see *requirements.txt*). Run *python3 g
 
 The *generate.py* script transcribes sketches you place the *examples* directory. It requires them organized as follows: *category > sub-category > sketch > sketch.pyde*. For example: *Basics > Structure > Coordinates > Coordinates.pyde*
 
-Note that pyp5js has it's [limitations](https://berinhard.github.io/pyp5js/known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things), related to differences between Processing.py and p5.js.
+Note that pyp5js has it's [limitations](https://berinhard.github.io/pyp5js/#known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things), related to differences between Processing.py and p5.js.
 
 ### Using the Standard Python Mode Examples
 
