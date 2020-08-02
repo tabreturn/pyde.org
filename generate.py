@@ -1,8 +1,3 @@
-'''
-Instructions:
-https://github.com/tabreturn/tabreturn.pyde/blob/master/README.md
-'''
-
 import os
 import re
 import shutil
@@ -15,6 +10,7 @@ from pyp5js.commands import transcrypt_sketch
 from pyp5js.config import SKETCHBOOK_DIR
 
 EXAMPLES_DIR = os.path.abspath(os.path.join(SKETCHBOOK_DIR, os.pardir))
+DL = '___' # delimiter for file names
 
 # delete any partially transcribed files from a previous run
 
@@ -33,8 +29,8 @@ os.makedirs(SITE_DIR)
 # rename and copy sketches to _temp directory
 
 for category in os.listdir(EXAMPLES_DIR):
-
-    if category == '.gitignore':
+    # skip over gitignore and other hidden files
+    if category[0] == '.':
         continue
 
     category_dir = os.path.join(EXAMPLES_DIR, category)
@@ -48,7 +44,7 @@ for category in os.listdir(EXAMPLES_DIR):
 
         for sketch in os.listdir(sub_category_dir):
             sketch_path = os.path.join(sub_category_dir, sketch)
-            new_name = '{}__{}__{}'.format(category, sc_final, sketch)
+            new_name = ''.join([category, DL, sc_final, DL, sketch])
             shutil.copytree(sketch_path, os.path.join(SKETCHBOOK_DIR, new_name))
 
 # rename .pyde extensions (in _temp directory) to .py
@@ -66,14 +62,14 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
 
 
 def addDrawAndSetupFunctions(code):
-    """Add setup() and draw() functions for pyp5js compatibility"""
+    """Add draw() and setup() functions for pyp5js compatibility"""
     flush_size_function = re.compile(r'(^size\()(.*)', flags=re.MULTILINE)
     indent_size_function = r'def setup():\n    \1\2\n\ndef draw():'
     code = flush_size_function.sub(indent_size_function, code)
     result = ''
     indent_mode = False
     def_draw = 'def draw():'
-
+    # indent everything after draw() function (up to next def)
     for line in code.split('\n'):
 
         if not indent_mode and line[0:len(def_draw)] == def_draw:
@@ -99,10 +95,10 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     sketch_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, temp_sketch+'.py')
     sketch_read = open(sketch_file, 'rt')
     sketch_content = sketch_read.read()
-    # if size isn't indented, there's no setup() and draw() function
+    # add a setup() and draw() function if size() isn't indented
     if sketch_content.find('    size(') < 0:
         sketch_content = addDrawAndSetupFunctions(sketch_content)
-    # replace size() function for pyp5js compatibility
+    # replace size() with createCanvas() function for pyp5js compatibility
     sketch_content = sketch_content.replace('size(', 'createCanvas(')
     sketch_content = 'from pyp5js import *\n' + sketch_content
     sketch_read.close()
@@ -133,9 +129,9 @@ sketches_data = []
 
 for temp_sketch in os.listdir(SITE_DIR):
     temp_sketch_path = os.path.join(SKETCHBOOK_DIR, temp_sketch)
-    temp_sketch_path = os.path.join(temp_sketch_path, temp_sketch + '.py')
-    # undo pyp5js amends (convert back to processing.py code)
-    sketch_read = open(sketch_file, 'rt')
+    temp_sketch_file = os.path.join(temp_sketch_path, temp_sketch + '.py')
+    # undo pyp5js additions/replacements (to display processing.py code)
+    sketch_read = open(temp_sketch_file, 'rt')
     sketch_content = sketch_read.read()
     sketch_content = sketch_content.replace('from pyp5js import *\n', '')
     sketch_content = sketch_content.replace('createCanvas(', 'size(')
@@ -145,7 +141,7 @@ for temp_sketch in os.listdir(SITE_DIR):
     sketch_description = sketch_description.replace('"""', '')
     sketch_description = sketch_description.split('\n', 2)[2]
     sketch_code = highlight(sketch_code, ProcessingPyLexer(), HtmlFormatter())
-    cat_subcat_sketch = temp_sketch.split('__')
+    cat_subcat_sketch = temp_sketch.split(DL)
     sketches_data.append({
       'file_name': temp_sketch,
       'category': cat_subcat_sketch[0],
