@@ -1,3 +1,2 @@
-markdown2==2.3.9
 Pygments==2.6.1
 pyp5js==0.4.3
