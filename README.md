@@ -30,7 +30,7 @@ You'll need to delete or reorganise the following:
 * *Topics/Pattern* (directory structure incompatible)
 * *Topics/Pulses* (directory structure incompatible)
 
-**Just because the transcribing process runs, and the website builds, doesn't mean all of the sketches will work**. This is still, very much, a work in progress. Some sketches will require manual intervention / some re-writing. I plan to work through these when I have time.
+**Just because the transcribing process runs, and the website builds, doesn't mean all of the sketches will work**. This is still, very much, a work in progress. Some sketches will require manual intervention / some rewriting. I plan to work through the list whenever I get the time.
 
 ## Todo
 
