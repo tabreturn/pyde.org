@@ -32,7 +32,6 @@ import shutil
 
 from jinja2 import Environment, FileSystemLoader
 from lexer import ProcessingPyLexer
-from markdown2 import markdown
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pyp5js.commands import transcrypt_sketch
@@ -90,17 +89,15 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
 
 for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     sketch_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, temp_sketch+'.py')
-    
-    fin = open(sketch_file, 'rt')
-    data = fin.read()
-    data = data.replace('size(', 'createCanvas(')
-    fin.close()
-    fin = open(sketch_file, 'wt')
-    fin.write(data)
-    fin.close()
-
-    
-
+    sketch_read = open(sketch_file, 'rt')
+    sketch_content = sketch_read.read()
+    # amend code for pyp5js compatibility
+    sketch_content = sketch_content.replace('size(', 'createCanvas(')
+    sketch_content = 'from pyp5js import *\n' + sketch_content
+    sketch_read.close()
+    sketch_write = open(sketch_file, 'wt')
+    sketch_write.write(sketch_content)
+    sketch_write.close()
     transcrypt_sketch(temp_sketch)
 
 # move transcribed sketches to _site directory
@@ -109,8 +106,6 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     source_dir = os.path.join(SKETCHBOOK_DIR, temp_sketch, 'target')
     target_dir = os.path.join(SITE_DIR, temp_sketch)
     shutil.move(source_dir, target_dir)
-
-shutil.rmtree(SKETCHBOOK_DIR)
 
 # load templates
 
@@ -121,20 +116,35 @@ templates = {
   'example': env.get_template('example.html'),
 }
 
-# generate landing page
+# read all sketch data into a list
 
-metadata_all = []
+sketches_data = []
 
-for sketch in os.listdir(SITE_DIR):
-    cat_subcat_sketch = sketch.split('__') 
-    metadata_all.append({
-      'file_name': sketch,
+for temp_sketch in os.listdir(SITE_DIR):
+    temp_sketch_path = os.path.join(SKETCHBOOK_DIR, temp_sketch)
+    temp_sketch_path = os.path.join(temp_sketch_path, temp_sketch + '.py')
+    # undo pyp5js amends (convert back to processing.py code)
+    sketch_read = open(sketch_file, 'rt')
+    sketch_content = sketch_read.read()
+    sketch_content = sketch_content.replace('from pyp5js import *\n', '')
+    sketch_content = sketch_content.replace('createCanvas(', 'size(')
+    # separate out description code and metadata
+    sketch_description = re.findall('"""[\s\S]*?"""', sketch_content)[0]
+    sketch_code = sketch_content.replace(sketch_description, '')
+    sketch_code = highlight(sketch_code, ProcessingPyLexer(), HtmlFormatter())
+    cat_subcat_sketch = temp_sketch.split('__')
+    sketches_data.append({
+      'file_name': temp_sketch,
       'category': cat_subcat_sketch[0],
       'sub_category': cat_subcat_sketch[1],
-      'title': cat_subcat_sketch[2]
+      'title': cat_subcat_sketch[2],
+      'description': sketch_description,
+      'code': sketch_code
     })
 
-index_html = templates['index'].render(metadata=metadata_all)
+# generate landing page
+
+index_html = templates['index'].render(metadata=sketches_data)
 
 with open(os.path.join(SITE_DIR, 'index.html'), 'w') as file:
     file.write(index_html)
@@ -148,24 +158,14 @@ for asset in os.listdir('static'):
     
 # generate example pages
 
-for example in metadata_all:
-    example_dir = os.path.join(SITE_DIR, example['file_name'])
-    
-    example_description = 'a'
-    example_code = 'b'
-    
-    
-    
-    
-    example_html = templates['example'].render(contents=example)
+for sketch in sketches_data:
+    example_html = templates['example'].render(contents=sketch)
+    example_dir = os.path.join(SITE_DIR, sketch['file_name'])
     
     with open(os.path.join(example_dir, 'index.html'), 'w') as file:
         file.write(example_html)
-
-
-
-
-'''     
+'''
+    
 eg_name = 'Coordinates'
 transcrypt_sketch(eg_name)
 
