@@ -45,9 +45,9 @@ You'll need to delete or reorganise the following:
   - [ ] define layout with inspiration from generative design (new book) website
   - [ ] refine pygments highlighting
     - [ ] style setup(), draw(), etc. processing functions
-  - [ ] 
   - [ ] ...
 - [ ] design cheetsheat
   - [ ] see oc/temp files
   - [ ] ...
+- [ ] add readme screenshot
 - [ ] other ...
