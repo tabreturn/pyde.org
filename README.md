@@ -6,7 +6,7 @@ This repository hosts the source files for [pyde.tabreturn.com](http://pyde.tabr
 
 ## Instructions
 
-This is a hand-rolled static site generator built using [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) for templating and [pyp5js](https://berinhard.github.io/pyp5js/) to transcribe processing.py files to p5.js. 
+This is a hand-rolled static site generator built using [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) for templating and [pyp5js](https://berinhard.github.io/pyp5js/) to transcribe processing.py files to p5.js. It uses a modified [Pygments](https://pygments.org/) lexer for syntax highlighting.
 
 Install the relevant Python 3 libraries (see *requirements.txt*). Run *python3 generate.py* to generate the website (that's output to the *_site* directory).
 
