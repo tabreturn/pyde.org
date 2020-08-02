@@ -39,10 +39,13 @@ You'll need to delete or reorganise the following:
   - [ ] make canvas responsive for mobile
   - [ ] ...
 - [ ] style website
+  - [ ] generate sidebar
   - [ ] add footer (with credits for processing, pyp5js, github repo)
   - [ ] define colors and fonts with inspiration from the processing.org website
   - [ ] define layout with inspiration from generative design (new book) website
   - [ ] refine pygments highlighting
+    - [ ] style setup(), draw(), etc. processing functions
+  - [ ] 
   - [ ] ...
 - [ ] design cheetsheat
   - [ ] see oc/temp files
