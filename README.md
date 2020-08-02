@@ -2,13 +2,35 @@
 
 *A collection of examples, cheatsheets, and other Processing Python Mode / Processing.py resources*
 
-This repository hosts the source files for pyde.tabreturn.com -- which includes Python Mode ports of the Java examples on the official [Processing wesbite](https://processing.org/examples/) presented in format resembling the [Generative Design website](http://www.generative-gestaltung.de/2/).
-
-<!-- You can view the [live website here](http://pyde.tabreturn.com). -->
+This repository hosts the source files for [pyde.tabreturn.com](http://pyde.tabreturn.com) -- which includes Python Mode ports of the Java examples on the official [Processing wesbite](https://processing.org/examples/). Processing includes these examples with Python Mode (accessible in the IDE from the *File > Examples...* menu).
 
 ## Instructions
 
-This is a hand-rolled static site generator. Run *generate.py* to generate the website files (*_site* directory).
+This is a hand-rolled static site generator built using [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) for templating and [pyp5js](https://berinhard.github.io/pyp5js/) to transcribe processing.py files to p5.js format. 
+
+Install the relevant Python 3 libraries (see *requirements.txt*). Run *python3 generate.py* to generate the website (that's output to the *_site* directory).
+
+The script expects sketches organized as follows: *category > sub-category > sketch > sketch.pyde*
+
+For example: *Basics > Structure > Coordinates > Coordinates.pyde*
+
+Note that pyp5js has it's [limitations](https://berinhard.github.io/pyp5js/known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things), related to differences between Processing.py and p5.js.
+
+### Using the Standard Python Mode examples
+
+You can retrieve the Processing.py example files from https://github.com/jdf/processing.py/tree/master/mode/examples and place those in the *examples* directory. 
+
+There are some sketches that are problematic that you'll need to delete. Many fail because of the way they're organized (directory structure) which shouldn't be difficult to fix manually. 
+
+You'll need to delete or reorganise the following directories:
+
+* *Advanced* (directory structure incompatible)
+* *Contributed Libraries in Python* (I still need to look at libraries)
+* *Python Mode Differences* (directory structure incompatible)
+* *Topics/ContinuousLines* (directory structure incompatible)
+* *Topics/File IO/LoadFile2* (can't import from module collections)
+* *Topics/Pattern* (directory structure incompatible)
+* *Topics/Pulses* (directory structure incompatible)
 
 ## Todo
 
