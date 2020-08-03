@@ -47,7 +47,7 @@ for category in os.listdir(EXAMPLES_DIR):
             new_name = ''.join([category, DL, sc_final, DL, sketch])
             shutil.copytree(sketch_path, os.path.join(SKETCHBOOK_DIR, new_name))
 
-# rename .pyde extensions (in _temp directory) to .py
+# copy .pyde file (in _temp directory) to a .py file (for p5js conversion)
 
 for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     temp_sketch_dir = os.path.join(SKETCHBOOK_DIR, temp_sketch)
@@ -55,7 +55,7 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     for sketch_file in os.listdir(temp_sketch_dir):
 
         if sketch_file[-5:] == '.pyde':
-            os.rename(
+            shutil.copy(
               os.path.join(temp_sketch_dir, sketch_file),
               os.path.join(temp_sketch_dir, temp_sketch + '.py')
             )
@@ -129,12 +129,10 @@ sketches_data = []
 
 for temp_sketch in os.listdir(SITE_DIR):
     temp_sketch_path = os.path.join(SKETCHBOOK_DIR, temp_sketch)
-    temp_sketch_file = os.path.join(temp_sketch_path, temp_sketch + '.py')
-    # undo pyp5js additions/replacements (to display processing.py code)
+    pyde_file = temp_sketch.split(DL)[-1] + '.pyde'
+    temp_sketch_file = os.path.join(temp_sketch_path, pyde_file)
     sketch_read = open(temp_sketch_file, 'rt')
     sketch_content = sketch_read.read()
-    sketch_content = sketch_content.replace('from pyp5js import *\n', '')
-    sketch_content = sketch_content.replace('createCanvas(', 'size(')
     # separate out description code and metadata
     sketch_description = re.findall('"""[\s\S]*?"""', sketch_content)[0]
     sketch_code = sketch_content.replace(sketch_description, '')
