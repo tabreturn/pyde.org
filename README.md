@@ -42,9 +42,9 @@ You'll need to delete or reorganise the following:
   - [ ] ...
 - [ ] style website
   - [ ] generate sidebar
-  - [ ] add footer (with credits for processing, pyp5js, github repo)
+  - [x] add footer (with credits for processing, pyp5js, github repo)
   - [ ] define colors and fonts with inspiration from the processing.org website
-  - [ ] define layout with inspiration from generative design (new book) website
+  - [ ] define layout with inspiration from generative design (new book) website?
   - [ ] refine pygments highlighting
     - [ ] style setup(), draw(), etc. processing functions
   - [ ] ...
@@ -53,5 +53,5 @@ You'll need to delete or reorganise the following:
   - [ ] ...
 - [ ] add readme screenshot
 - [ ] fix
-  - [ ] example page code listing must display original code (i.e. unindented with no setup and draw)
+  - [x] example page code listing must display original code (i.e. unindented with no setup and draw)
 - [ ] other ...
