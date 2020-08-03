@@ -35,6 +35,10 @@ header {
   margin: auto;
 }
 
+header code {
+  font-size: 0.8em;
+}
+
 h1 {
   background-color: var(--theme_color_3);
   font-size: 2.5em;
