@@ -1,28 +1,35 @@
 W = working
+D = doesn't run (but transcribes fine)
+M = uses p5 matrix code (won't work)
 
 ./Advanced/KeyCodes/KeyCodes.pyde
-./Basics/Camera/MoveEye/MoveEye.pyde
-./Basics/Camera/Orthographic/Orthographic.pyde
-./Basics/Camera/Perspective/Perspective.pyde
-./Basics/Color/Brightness/Brightness.pyde
-./Basics/Color/ColorVariables/ColorVariables.pyde
-./Basics/Color/Hue/Hue.pyde
-./Basics/Color/LinearGradient/LinearGradient.pyde
-./Basics/Color/RadialGradient/RadialGradient.pyde
-./Basics/Color/Relativity/Relativity.pyde
-./Basics/Color/Saturation/Saturation.pyde
-./Basics/Color/WaveGradient/WaveGradient.pyde
+
+W ./Basics/Camera/MoveEye/MoveEye.pyde
+W ./Basics/Camera/Orthographic/Orthographic.pyde
+D ./Basics/Camera/Perspective/Perspective.pyde
+
+W ./Basics/Color/Brightness/Brightness.pyde
+M ./Basics/Color/ColorVariables/ColorVariables.pyde
+W ./Basics/Color/Hue/Hue.pyde
+D ./Basics/Color/LinearGradient/LinearGradient.pyde
+W ./Basics/Color/RadialGradient/RadialGradient.pyde
+D ./Basics/Color/Relativity/Relativity.pyde
+W ./Basics/Color/Saturation/Saturation.pyde
+D ./Basics/Color/WaveGradient/WaveGradient.pyde
+
 ./Basics/Control/BooleanOperators/BooleanOperators.pyde
 ./Basics/Control/Conditionals1/Conditionals1.pyde
 ./Basics/Control/Conditionals2/Conditionals2.pyde
 ./Basics/Control/EmbeddedIteration/EmbeddedIteration.pyde
 ./Basics/Control/Iteration/Iteration.pyde
+
 ./Basics/Data/DatatypeConversion/DatatypeConversion.pyde
 ./Basics/Data/IntegersFloats/IntegersFloats.pyde
 ./Basics/Data/Strings/Strings.pyde
 ./Basics/Data/TrueFalse/TrueFalse.pyde
 ./Basics/Data/Variables/Variables.pyde
 ./Basics/Data/VariableScope/VariableScope.pyde
+
 ./Basics/Form/Bezier/Bezier.pyde
 ./Basics/Form/PieChart/PieChart.pyde
 ./Basics/Form/PointsLines/PointsLines.pyde
@@ -31,6 +38,7 @@ W = working
 ./Basics/Form/ShapePrimitives/ShapePrimitives.pyde
 ./Basics/Form/Star/Star.pyde
 ./Basics/Form/TriangleStrip/TriangleStrip.pyde
+
 ./Basics/Image/Alphamask/Alphamask.pyde
 ./Basics/Image/BackgroundImage/BackgroundImage.pyde
 ./Basics/Image/CreateImage/CreateImage.pyde
@@ -38,6 +46,7 @@ W = working
 ./Basics/Image/Pointillism/Pointillism.pyde
 ./Basics/Image/RequestImage/RequestImage.pyde
 ./Basics/Image/Transparency/Transparency.pyde
+
 ./Basics/Input/Clock/Clock.pyde
 ./Basics/Input/Constrain/Constrain.pyde
 ./Basics/Input/Easing/Easing.pyde
@@ -50,15 +59,18 @@ W = working
 ./Basics/Input/MousePress/MousePress.pyde
 ./Basics/Input/MouseSignals/MouseSignals.pyde
 ./Basics/Input/StoringInput/StoringInput.pyde
+
 ./Basics/Lights/Directional/Directional.pyde
 ./Basics/Lights/Mixture/Mixture.pyde
 ./Basics/Lights/MixtureGrid/MixtureGrid.pyde
 ./Basics/Lights/OnOff/OnOff.pyde
 ./Basics/Lights/Reflection/Reflection.pyde
 ./Basics/Lights/Spot/Spot.pyde
+
 ./Basics/Lists/List/List.pyde
 ./Basics/Lists/List2D/List2D.pyde
 ./Basics/Lists/ListObjects/ListObjects.pyde
+
 ./Basics/Math/AdditiveWave/AdditiveWave.pyde
 ./Basics/Math/Arctangent/Arctangent.pyde
 ./Basics/Math/Distance1D/Distance1D.pyde
@@ -79,37 +91,44 @@ W = working
 ./Basics/Math/Sine/Sine.pyde
 ./Basics/Math/SineCosine/SineCosine.pyde
 ./Basics/Math/SineWave/SineWave.pyde
+
 ./Basics/Objects/CompositeObjects/CompositeObjects.pyde
 ./Basics/Objects/Inheritance/Inheritance.pyde
 ./Basics/Objects/MultipleConstructors/MultipleConstructors.pyde
 ./Basics/Objects/Objects/Objects.pyde
+
 ./Basics/Shape/DisableStyle/DisableStyle.pyde
 ./Basics/Shape/GetChild/GetChild.pyde
 ./Basics/Shape/LoadDisplayOBJ/LoadDisplayOBJ.pyde
 ./Basics/Shape/LoadDisplaySVG/LoadDisplaySVG.pyde
 ./Basics/Shape/ScaleShape/ScaleShape.pyde
 ./Basics/Shape/ShapeVertices/ShapeVertices.pyde
-W./Basics/Structure/Coordinates/Coordinates.pyde
-./Basics/Structure/CreateGraphics/CreateGraphics.pyde
-./Basics/Structure/Functions/Functions.pyde
-W./Basics/Structure/Loop/Loop.pyde
-./Basics/Structure/NoLoop/NoLoop.pyde
-./Basics/Structure/Recursion/Recursion.pyde
-./Basics/Structure/Redraw/Redraw.pyde
-./Basics/Structure/SetupDraw/SetupDraw.pyde
-./Basics/Structure/StatementsComments/StatementsComments.pyde
-W./Basics/Structure/WidthHeight/WidthHeight.pyde
+
+W ./Basics/Structure/Coordinates/Coordinates.pyde
+D ./Basics/Structure/CreateGraphics/CreateGraphics.pyde
+W ./Basics/Structure/Functions/Functions.pyde
+W ./Basics/Structure/Loop/Loop.pyde
+W ./Basics/Structure/NoLoop/NoLoop.pyde
+W ./Basics/Structure/Recursion/Recursion.pyde
+W ./Basics/Structure/Redraw/Redraw.pyde
+W ./Basics/Structure/SetupDraw/SetupDraw.pyde
+W ./Basics/Structure/StatementsComments/StatementsComments.pyde
+W ./Basics/Structure/WidthHeight/WidthHeight.pyde
+
 ./Basics/Transform/Arm/Arm.pyde
 ./Basics/Transform/Rotate/Rotate.pyde
 ./Basics/Transform/RotatePushPop/RotatePushPop.pyde
 ./Basics/Transform/RotateXY/RotateXY.pyde
 ./Basics/Transform/Scale/Scale.pyde
 ./Basics/Transform/Translate/Translate.pyde
+
 ./Basics/Typography/FiveWaysOfWritingText/FiveWaysOfWritingText.pyde
 ./Basics/Typography/Letters/Letters.pyde
 ./Basics/Typography/Words/Words.pyde
+
 ./Basics/Web/EmbeddedLinks/EmbeddedLinks.pyde
 ./Basics/Web/LoadingImages/LoadingImages.pyde
+
 ./Contributed Libraries in Python/Arduino-Firmata/arduino_input/arduino_input.pyde
 ./Contributed Libraries in Python/beads/Lesson01_AudioContext/Lesson01_AudioContext.pyde
 ./Contributed Libraries in Python/beads/Lesson04_SamplePlayer/Lesson04_SamplePlayer.pyde
@@ -133,6 +152,7 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Contributed Libraries in Python/PeasyCam/cameraHUD/cameraHUD.pyde
 ./Contributed Libraries in Python/PeasyCam/HelloPeasy/HelloPeasy.pyde
 ./Contributed Libraries in Python/ttslib/ttstest/ttstest.pyde
+
 ./Demos/Graphics/BoxClock/BoxClock.pyde
 ./Demos/Graphics/LowLevelGLVboInterleaved/LowLevelGLVboInterleaved.pyde
 ./Demos/Graphics/LowLevelGLVboSeparate/LowLevelGLVboSeparate.pyde
@@ -141,23 +161,31 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Demos/Graphics/Trefoil/Trefoil.pyde
 ./Demos/Graphics/Wiggling/Wiggling.pyde
 ./Demos/Graphics/Yellowtail/Yellowtail.pyde
+
 ./Demos/Performance/Esfera/Esfera.pyde
 ./Demos/Performance/LineRendering/LineRendering.pyde
 ./Demos/Performance/QuadRendering/QuadRendering.pyde
 ./Demos/Performance/TextRendering/TextRendering.pyde
 ./Demos/Tests/NoBackgroundTest/NoBackgroundTest.pyde
+
 ./Demos/Tests/RedrawTest/RedrawTest.pyde
 ./Demos/Tests/ResizeTest/ResizeTest.pyde
+
 ./Python Mode Differences/IntAndFloat/IntAndFloat.pyde
 ./Python Mode Differences/LiteralColors/LiteralColors.pyde
 ./Python Mode Differences/WithStatements/WithStatements.pyde
+
 ./Topics/AdvancedData/A_List/A_List.pyde
 ./Topics/AdvancedData/LoadSaveTable/LoadSaveTable.pyde
+
 ./Topics/Animation/AnimatedSprite/AnimatedSprite.pyde
 ./Topics/Animation/Sequential/Sequential.pyde
+
 ./Topics/Cellular Automata/GameOfLife/GameOfLife.pyde
 ./Topics/Cellular Automata/Wolfram/Wolfram.pyde
+
 ./Topics/ContinuousLines/ContinuousLines.pyde
+
 ./Topics/Create Shapes/BeginEndContour/BeginEndContour.pyde
 ./Topics/Create Shapes/GroupPShape/GroupPShape.pyde
 ./Topics/Create Shapes/ParticleSystemPShape/ParticleSystemPShape.pyde
@@ -168,15 +196,18 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Topics/Create Shapes/PolygonPShapeOOP3/PolygonPShapeOOP3.pyde
 ./Topics/Create Shapes/PrimitivePShape/PrimitivePShape.pyde
 ./Topics/Create Shapes/WigglePShape/WigglePShape.pyde
+
 ./Topics/File IO/LoadFile1/LoadFile1.pyde
 ./Topics/File IO/LoadFile2/LoadFile2.pyde
 ./Topics/File IO/SaveOneImage/SaveOneImage.pyde
+
 ./Topics/Fractals and L-Systems/Koch/Koch.pyde
 ./Topics/Fractals and L-Systems/Mandelbrot/Mandelbrot.pyde
 ./Topics/Fractals and L-Systems/PenroseSnowflake/PenroseSnowflake.pyde
 ./Topics/Fractals and L-Systems/PenroseTile/PenroseTile.pyde
 ./Topics/Fractals and L-Systems/Pentigree/Pentigree.pyde
 ./Topics/Fractals and L-Systems/Tree/Tree.pyde
+
 ./Topics/Geometry/Icosahedra/Icosahedra.pyde
 ./Topics/Geometry/NoiseSphere/NoiseSphere.pyde
 ./Topics/Geometry/RGBCube/RGBCube.pyde
@@ -184,10 +215,12 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Topics/Geometry/SpaceJunk/SpaceJunk.pyde
 ./Topics/Geometry/Toroid/Toroid.pyde
 ./Topics/Geometry/Vertices/Vertices.pyde
+
 ./Topics/GUI/Button/Button.pyde
 ./Topics/GUI/Handles/Handles.pyde
 ./Topics/GUI/Rollover/Rollover.pyde
 ./Topics/GUI/Scrollbar/Scrollbar.pyde
+
 ./Topics/Image Processing/Blending/Blending.pyde
 ./Topics/Image Processing/Blur/Blur.pyde
 ./Topics/Image Processing/Brightness/Brightness.pyde
@@ -199,6 +232,7 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Topics/Image Processing/LinearImage/LinearImage.pyde
 ./Topics/Image Processing/PixelArray/PixelArray.pyde
 ./Topics/Image Processing/Zoom/Zoom.pyde
+
 ./Topics/Interaction/Follow1/Follow1.pyde
 ./Topics/Interaction/Follow2/Follow2.pyde
 ./Topics/Interaction/Follow3/Follow3.pyde
@@ -206,6 +240,7 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Topics/Interaction/Reach2/Reach2.pyde
 ./Topics/Interaction/Reach3/Reach3.pyde
 ./Topics/Interaction/Tickle/Tickle.pyde
+
 ./Topics/Motion/Bounce/Bounce.pyde
 ./Topics/Motion/BouncyBubbles/BouncyBubbles.pyde
 ./Topics/Motion/Brownian/Brownian.pyde
@@ -216,8 +251,11 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Topics/Motion/MovingOnCurves/MovingOnCurves.pyde
 ./Topics/Motion/Reflection1/Reflection1.pyde
 ./Topics/Motion/Reflection2/Reflection2.pyde
+
 ./Topics/Pattern/Pattern.pyde
+
 ./Topics/Pulses/Pulses.pyde
+
 ./Topics/Shaders/BlurFilter/BlurFilter.pyde
 ./Topics/Shaders/Conway/Conway.pyde
 ./Topics/Shaders/CustomBlend/CustomBlend.pyde
@@ -232,6 +270,7 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Topics/Shaders/Nebula/Nebula.pyde
 ./Topics/Shaders/SepBlur/SepBlur.pyde
 ./Topics/Shaders/ToonShading/ToonShading.pyde
+
 ./Topics/Simulate/Chain/Chain.pyde
 ./Topics/Simulate/Flocking/Flocking.pyde
 ./Topics/Simulate/ForcesWithVectors/ForcesWithVectors.pyde
@@ -242,11 +281,13 @@ W./Basics/Structure/WidthHeight/WidthHeight.pyde
 ./Topics/Simulate/SoftBody/SoftBody.pyde
 ./Topics/Simulate/Spring/Spring.pyde
 ./Topics/Simulate/Springs/Springs.pyde
+
 ./Topics/Textures/TextureCube/TextureCube.pyde
 ./Topics/Textures/TextureCylinder/TextureCylinder.pyde
 ./Topics/Textures/TextureQuad/TextureQuad.pyde
 ./Topics/Textures/TextureSphere/TextureSphere.pyde
 ./Topics/Textures/TextureTriangle/TextureTriangle.pyde
+
 ./Topics/Vectors/AccelerationWithVectors/AccelerationWithVectors.pyde
 ./Topics/Vectors/BouncingBall/BouncingBall.pyde
 ./Topics/Vectors/VectorMath/VectorMath.pyde
