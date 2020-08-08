@@ -49,6 +49,7 @@ You'll need to delete or reorganise the following:
   - [ ] refine pygments highlighting
     - [ ] style setup(), draw(), etc. processing functions
   - [ ] ...
+- [ ] add lessons (from tabreturn.github.io)?
 - [ ] design cheetsheat
   - [ ] see oc/temp files
   - [ ] ...
