@@ -6,16 +6,32 @@
 
 <header>
   <code>
-    # PYDE: a collection of Processing Python Mode resources
+    # Generated using the <a href="https://github.com/jdf/processing.py/tree/master/mode/examples">Python Mode examples</a>
   </code>
   <h1>Short, prototypical programs exploring the basics of programming with Processing.py.</h1>
 </header>
 
 <div id="thumbnails">
+
+<h2>Structure</h2>
 {% for data in metadata %}
-  <a href="{{data.file_name}}/" class="thumbnail">
-    <p>{{data.category}}<br />{{data.title}}</p>
-  </a>
+  {% if data.sub_category == 'Structure' %}
+    <a href="{{data.file_name}}/" class="thumbnail">
+      <p>{{data.title}}</p>
+    </a>
+  {% endif %}
+{% endfor %}
+</div>
+
+<div id="thumbnails">
+
+<h2>Color</h2>
+{% for data in metadata %}
+  {% if data.sub_category == 'Color' %}
+    <a href="{{data.file_name}}/" class="thumbnail">
+      <p>{{data.title}}</p>
+    </a>
+  {% endif %}
 {% endfor %}
 </div>
 
