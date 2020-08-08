@@ -100,6 +100,8 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
         sketch_content = addDrawAndSetupFunctions(sketch_content)
     # replace size() with createCanvas() function for pyp5js compatibility
     sketch_content = sketch_content.replace('size(', 'createCanvas(')
+    # replace P3D with WEBGL for pyp5js compatibility
+    sketch_content = sketch_content.replace('P3D)', 'WEBGL)')
     sketch_content = 'from pyp5js import *\n' + sketch_content
     sketch_read.close()
     sketch_write = open(sketch_file, 'wt')
