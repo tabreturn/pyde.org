@@ -39,6 +39,7 @@ You'll need to delete or reorganise the following:
   - [x] generate example directories from md (then compile and move them into _site)
   - [x] replace p5js functions in transcrypted code to processing.py -- i.e. `createCanvas()` to `size()`
   - [ ] make canvas responsive for mobile
+  - [ ] embed p5js canvas in iframe? (mouse coordinates relative to entire window)
   - [ ] ...
 - [ ] style website
   - [ ] generate sidebar
