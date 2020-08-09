@@ -64,7 +64,7 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
 def addDrawAndSetupFunctions(code):
     """Add draw() and setup() functions for pyp5js compatibility"""
     flush_size_function = re.compile(r'(^size\()(.*)', flags=re.MULTILINE)
-    indent_size_function = r'def setup():\n    \1\2\n\ndef draw():'
+    indent_size_function = r'def setup():\n    \1\2\n\ndef draw():\n'
     code = flush_size_function.sub(indent_size_function, code)
     result = ''
     indent_mode = False
