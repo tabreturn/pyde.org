@@ -41,7 +41,7 @@ header code {
 
 h1 {
   background-color: var(--theme_color_3);
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 3em 0;
   padding: 1em 0.8em;
 }
@@ -62,68 +62,85 @@ footer {
   border-top: 1px solid var(--theme_color_1);
   font-size:0.9em;
   margin: auto;
-  margin-top: 8em;
+  margin-top: 3em;
   margin-bottom: 1.5em;
   max-width: 1000px;
+  opacity: 0.7;
   padding-top: 1em;
 }
 
 /* class, id, etc. selectors */
 
-#thumbnails, #example {
+#sketches, #example {
+  box-sizing: border-box;
   max-width: 1000px;
   margin: auto;
+  padding: 0 2em;
 }
 
-#thumbnails {
+#sketches {
   display: grid;
   grid-column-gap: 10px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1;
 }
 
-#thumbnails .thumbnail {
-  background-color: var(--theme_color_1);
-  border-radius: 3px;
-  color: var(--theme_color_2);
-  display: block;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-decoration: none;
-}
-
-#thumbnails .thumbnail p {
-  height: 2.6em;
-  line-height: 1.2em;
-  margin: 0;
-  padding-top: 0.25em;
+#sketches ul {
+  padding-left: 1em;
 }
 
 #example .highlight {
   background-color: var(--theme_color_2);
   border-radius: 3px;
+  box-sizing: border-box;
   font-size: 0.85em;
+  margin-top: 1em;
   padding: 0.1em 1em;
+  width: 640px;
 }
+
+#example #content {
+  box-sizing: border-box;
+  float: left;
+  padding-right: 2em;
+  width: 640px;
+}
+
+#example p {
+  padding-bottom: 1em;
+}
+
+#navheader h1 {
+  padding-top: 0.5em;
+}
+
+#navheader .breadcrumb {
+  font-size: 1rem;
+}
+
 
 /* media queries */
 
 @media (min-width: 576px) {
 
-  #thumbnails {
-    grid-template-columns: repeat(3, 1fr);
+  h1 {
+    font-size: 2.5em;
+  }
+
+  #sketches {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 768px) {
 
-  #thumbnails {
-    grid-template-columns: repeat(4, 1fr);
+  #sketches {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 992px) {
 
-  #thumbnails {
-    grid-template-columns: repeat(5, 1fr);
+  #sketches {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
