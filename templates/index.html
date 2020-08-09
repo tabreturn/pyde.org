@@ -15,46 +15,46 @@
 
   <div>
     <h2>Structure</h2>
-    {% for data in metadata %}
     <ul>
+      {% for data in metadata %}
       {% if data.sub_category == 'Structure' %}
       <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
       {% endif %}
+      {% endfor %}
     </ul>
-    {% endfor %}
   </div>
   
   <div>
     <h2>Color</h2>
-    {% for data in metadata %}
     <ul>
-      {% if data.sub_category == 'Color' %}
+      {% for data in metadata %}
+      {% if data.sub_category == 'Structure' %}
       <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
       {% endif %}
+      {% endfor %}
     </ul>
-    {% endfor %}
   </div>
   
   <div>
     <h2>Data</h2>
-    {% for data in metadata %}
     <ul>
-      {% if data.sub_category == 'Data' %}
+      {% for data in metadata %}
+      {% if data.sub_category == 'Structure' %}
       <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
       {% endif %}
+      {% endfor %}
     </ul>
-    {% endfor %}
   </div>
   
   <div>
     <h2>Control</h2>
-    {% for data in metadata %}
     <ul>
-      {% if data.sub_category == 'Control' %}
+      {% for data in metadata %}
+      {% if data.sub_category == 'Structure' %}
       <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
       {% endif %}
+      {% endfor %}
     </ul>
-    {% endfor %}
   </div>
   
 </div>

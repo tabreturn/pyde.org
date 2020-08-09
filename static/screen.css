@@ -88,6 +88,10 @@ footer {
   padding-left: 1em;
 }
 
+#sketches li {
+  padding: 0.25em 0;
+}
+
 #example .highlight {
   background-color: var(--theme_color_2);
   border-radius: 3px;
