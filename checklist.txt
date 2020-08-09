@@ -1,8 +1,9 @@
 W = working
-D = doesn't run (but transcribes fine)
+D = doesn't run properly (but transcribes fine)
 M = uses p5 matrix code (won't work)
+! = doesn't transcribe
 
-./Advanced/KeyCodes/KeyCodes.pyde
+! ./Advanced/KeyCodes/KeyCodes.pyde
 
 W ./Basics/Camera/MoveEye/MoveEye.pyde
 W ./Basics/Camera/Orthographic/Orthographic.pyde
@@ -17,18 +18,18 @@ D ./Basics/Color/Relativity/Relativity.pyde
 W ./Basics/Color/Saturation/Saturation.pyde
 D ./Basics/Color/WaveGradient/WaveGradient.pyde
 
-./Basics/Control/BooleanOperators/BooleanOperators.pyde
-./Basics/Control/Conditionals1/Conditionals1.pyde
-./Basics/Control/Conditionals2/Conditionals2.pyde
-./Basics/Control/EmbeddedIteration/EmbeddedIteration.pyde
-./Basics/Control/Iteration/Iteration.pyde
+W ./Basics/Control/BooleanOperators/BooleanOperators.pyde
+W ./Basics/Control/Conditionals1/Conditionals1.pyde
+W ./Basics/Control/Conditionals2/Conditionals2.pyde
+W ./Basics/Control/EmbeddedIteration/EmbeddedIteration.pyde
+W ./Basics/Control/Iteration/Iteration.pyde
 
-./Basics/Data/DatatypeConversion/DatatypeConversion.pyde
-./Basics/Data/IntegersFloats/IntegersFloats.pyde
-./Basics/Data/Strings/Strings.pyde
-./Basics/Data/TrueFalse/TrueFalse.pyde
-./Basics/Data/Variables/Variables.pyde
-./Basics/Data/VariableScope/VariableScope.pyde
+D ./Basics/Data/DatatypeConversion/DatatypeConversion.pyde
+W ./Basics/Data/IntegersFloats/IntegersFloats.pyde
+D ./Basics/Data/Strings/Strings.pyde
+W ./Basics/Data/TrueFalse/TrueFalse.pyde
+W ./Basics/Data/Variables/Variables.pyde
+D ./Basics/Data/VariableScope/VariableScope.pyde
 
 ./Basics/Form/Bezier/Bezier.pyde
 ./Basics/Form/PieChart/PieChart.pyde
