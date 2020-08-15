@@ -61,7 +61,7 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
             )
 
 
-def addDrawAndSetupFunctions(code):
+def add_draw_and_setup_functions(code):
     """Add draw() and setup() functions for pyp5js compatibility"""
     flush_size_function = re.compile(r'(^size\()(.*)', flags=re.MULTILINE)
     indent_size_function = r'def setup():\n    \1\2\n\ndef draw():\n'
@@ -88,6 +88,21 @@ def addDrawAndSetupFunctions(code):
 
     return result
 
+def prepend_line(file_name, line):
+    """ Insert given string as a new line at the beginning of a file """
+    # define name of temporary dummy file
+    dummy_file = file_name + '.bak'
+    # open original file in read mode and dummy file in write mode
+    with open(file_name, 'r') as read_obj, open(dummy_file, 'w') as write_obj:
+        # Write given line to the dummy file
+        write_obj.write(line + '\n')
+        # Read lines from original file one by one and append them to the dummy file
+        for line in read_obj:
+            write_obj.write(line)
+    # remove original file
+    os.remove(file_name)
+    # Rename dummy file as the original file
+    os.rename(dummy_file, file_name)
 
 # transcribe sketches using pyp5js
 
@@ -97,7 +112,7 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     sketch_content = sketch_read.read()
     # add a setup() and draw() function if size() isn't indented
     if sketch_content.find('    size(') < 0:
-        sketch_content = addDrawAndSetupFunctions(sketch_content)
+        sketch_content = add_draw_and_setup_functions(sketch_content)
     # replace size() with createCanvas() function for pyp5js compatibility
     sketch_content = sketch_content.replace('size(', 'createCanvas(')
     # replace P3D with WEBGL for pyp5js compatibility
