@@ -23,7 +23,18 @@
       {% endfor %}
     </ul>
   </div>
-  
+
+  <div>
+    <h2>Form</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Form' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
   <div>
     <h2>Color</h2>
     <ul>
@@ -51,6 +62,17 @@
     <ul>
       {% for data in metadata %}
       {% if data.sub_category == 'Control' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div>
+    <h2>Input</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Input' %}
       <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
       {% endif %}
       {% endfor %}

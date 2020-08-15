@@ -31,14 +31,14 @@ W ./Basics/Data/TrueFalse/TrueFalse.pyde
 W ./Basics/Data/Variables/Variables.pyde
 D ./Basics/Data/VariableScope/VariableScope.pyde
 
-./Basics/Form/Bezier/Bezier.pyde
-./Basics/Form/PieChart/PieChart.pyde
-./Basics/Form/PointsLines/PointsLines.pyde
-./Basics/Form/Primitives3D/Primitives3D.pyde
-./Basics/Form/RegularPolygon/RegularPolygon.pyde
-./Basics/Form/ShapePrimitives/ShapePrimitives.pyde
-./Basics/Form/Star/Star.pyde
-./Basics/Form/TriangleStrip/TriangleStrip.pyde
+W ./Basics/Form/Bezier/Bezier.pyde
+W ./Basics/Form/PieChart/PieChart.pyde
+W ./Basics/Form/PointsLines/PointsLines.pyde
+M ./Basics/Form/Primitives3D/Primitives3D.pyde
+M ./Basics/Form/RegularPolygon/RegularPolygon.pyde
+W ./Basics/Form/ShapePrimitives/ShapePrimitives.pyde
+M ./Basics/Form/Star/Star.pyde
+D ./Basics/Form/TriangleStrip/TriangleStrip.pyde
 
 ./Basics/Image/Alphamask/Alphamask.pyde
 ./Basics/Image/BackgroundImage/BackgroundImage.pyde
