@@ -120,6 +120,8 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     sc = re.sub(r'mousePressed(?!.*\()', r'mouseIsPressed', sc)
     # insert pyp5js import line
     sc = 'from pyp5js import *\n' + sc
+    # replace any println() functions for print()
+    sc = sc.replace('println(', 'print(')
 
     sketch_read.close()
     sketch_write = open(sketch_file, 'wt')
