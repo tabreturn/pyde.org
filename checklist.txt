@@ -1,6 +1,8 @@
 W = working
+C = works with minor changes to .pyde
+M = edit .pyde and replace `with pushMatrix()` for pushMatrix(), popMatrix()
+---
 D = doesn't run properly (but transcribes fine)
-M = uses p5 matrix code (won't work)
 ! = doesn't transcribe
 
 ! ./Advanced/KeyCodes/KeyCodes.pyde
@@ -12,9 +14,9 @@ W ./Basics/Camera/Perspective/Perspective.pyde
 W ./Basics/Color/Brightness/Brightness.pyde
 M ./Basics/Color/ColorVariables/ColorVariables.pyde
 W ./Basics/Color/Hue/Hue.pyde
-D ./Basics/Color/LinearGradient/LinearGradient.pyde
+C ./Basics/Color/LinearGradient/LinearGradient.pyde
 W ./Basics/Color/RadialGradient/RadialGradient.pyde
-D ./Basics/Color/Relativity/Relativity.pyde
+C ./Basics/Color/Relativity/Relativity.pyde
 W ./Basics/Color/Saturation/Saturation.pyde
 D ./Basics/Color/WaveGradient/WaveGradient.pyde
 
