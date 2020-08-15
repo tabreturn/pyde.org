@@ -95,6 +95,16 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     sketch_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, temp_sketch+'.py')
     sketch_read = open(sketch_file, 'rt')
     sketch_content = sketch_read.read()
+
+    # workaround for pyp5js global variables issue
+    # https://berinhard.github.io/pyp5js/#known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things
+    # find all global variables
+    global_vars = re.findall('global (.*)', sketch_content)
+    # add placeholder variables to global scope
+    for vars in global_vars:
+        nones = 'None, ' * len(vars.split(','))
+        sketch_content = '{} = {}\n{}'.format(vars, nones[:-2], sketch_content)
+
     # add a setup() and draw() function if size() isn't indented
     if sketch_content.find('    size(') < 0:
         sketch_content = add_draw_and_setup_functions(sketch_content)
