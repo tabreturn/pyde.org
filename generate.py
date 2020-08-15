@@ -96,33 +96,34 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     sketch_read = open(sketch_file, 'rt')
     sketch_content = sketch_read.read()
 
+    # pyp5js compatibility workarounds
+    sc = sketch_content
     # workaround for pyp5js global variables issue
     # https://berinhard.github.io/pyp5js/#known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things
     # find all global variables
-    global_vars = re.findall('global (.*)', sketch_content)
+    global_vars = re.findall('global (.*)', sc)
     # add placeholder variables to global scope
     for vars in global_vars:
         nones = 'None, ' * len(vars.split(','))
-        sketch_content = '{} = {}\n{}'.format(vars, nones[:-2], sketch_content)
-
+        sc = '{} = {}\n{}'.format(vars, nones[:-2], sc)
     # add a setup() and draw() function if size() isn't indented
-    if sketch_content.find('    size(') < 0:
-        sketch_content = add_draw_and_setup_functions(sketch_content)
+    if sc.find('    size(') < 0:
+        sc = add_draw_and_setup_functions(sc)
     # replace size() with createCanvas() function for pyp5js compatibility
-    sketch_content = sketch_content.replace('size(', 'createCanvas(')
+    sc = sc.replace('size(', 'createCanvas(')
     # replace P3D with WEBGL for pyp5js compatibility
-    sketch_content = sketch_content.replace('P3D)', 'WEBGL)')
+    sc = sc.replace('P3D)', 'WEBGL)')
     # remove any instances of beginDraw() and endDraw() for pyp5js compatibility
-    sketch_content = re.sub(r'.*beginDraw\(\)', r'', sketch_content)
-    sketch_content = re.sub(r'.*endDraw\(\)', r'', sketch_content)
+    sc = re.sub(r'.*beginDraw\(\)', r'', sc)
+    sc = re.sub(r'.*endDraw\(\)', r'', sc)
     # replace any instances of mousePressed variables for pyp5js compatibility
-    sketch_content = re.sub(r'mousePressed(?!.*\()', r'mouseIsPressed', sketch_content)
+    sc = re.sub(r'mousePressed(?!.*\()', r'mouseIsPressed', sc)
     # insert pyp5js import line
-    sketch_content = 'from pyp5js import *\n' + sketch_content
-    
+    sc = 'from pyp5js import *\n' + sc
+
     sketch_read.close()
     sketch_write = open(sketch_file, 'wt')
-    sketch_write.write(sketch_content)
+    sketch_write.write(sc)
     sketch_write.close()
     transcrypt_sketch(temp_sketch)
 
