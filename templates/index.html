@@ -12,7 +12,9 @@
 </header>
 
 <div id="sketches">
-
+  
+  <!-- this arrangement needs a refactor ... -->
+  
   <div>
     <h2>Structure</h2>
     <ul>
@@ -78,7 +80,18 @@
       {% endfor %}
     </ul>
   </div>
-  
+
+  <div>
+    <h2>Camera</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Camera' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
 </div>
 
 {% endblock %}
