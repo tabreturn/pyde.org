@@ -115,8 +115,11 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     # remove any instances of beginDraw() and endDraw() for pyp5js compatibility
     sketch_content = re.sub(r'.*beginDraw\(\)', r'', sketch_content)
     sketch_content = re.sub(r'.*endDraw\(\)', r'', sketch_content)
+    # replace any instances of mousePressed variables for pyp5js compatibility
+    sketch_content = re.sub(r'mousePressed(?!.*\()', r'mouseIsPressed', sketch_content)
     # insert pyp5js import line
     sketch_content = 'from pyp5js import *\n' + sketch_content
+    
     sketch_read.close()
     sketch_write = open(sketch_file, 'wt')
     sketch_write.write(sketch_content)

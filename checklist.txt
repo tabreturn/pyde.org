@@ -7,7 +7,7 @@ M = uses p5 matrix code (won't work)
 
 W ./Basics/Camera/MoveEye/MoveEye.pyde
 W ./Basics/Camera/Orthographic/Orthographic.pyde
-D ./Basics/Camera/Perspective/Perspective.pyde
+W ./Basics/Camera/Perspective/Perspective.pyde
 
 W ./Basics/Color/Brightness/Brightness.pyde
 M ./Basics/Color/ColorVariables/ColorVariables.pyde
