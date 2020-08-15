@@ -40,6 +40,7 @@ You'll need to delete or reorganise the following:
   - [x] replace p5js functions in transcrypted code to processing.py -- i.e. `createCanvas()` to `size()`
   - [ ] make canvas responsive for mobile
   - [ ] embed p5js canvas in iframe? (mouse coordinates relative to entire window)
+  - [ ] workarounds (in generate.py) should ignore commented code
   - [ ] ...
 - [ ] style website
   - [ ] generate sidebar
