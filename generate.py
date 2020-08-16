@@ -96,10 +96,9 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
     for sketch_file in os.listdir(os.path.join(SKETCHBOOK_DIR, temp_sketch)):
 
         if sketch_file[-3:] == '.py':
-            py_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, temp_sketch+'.py')
+            py_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, sketch_file)
             py_read = open(py_file, 'rt')
             py_content = py_read.read()
-
             # pyp5js compatibility workarounds
             pc = py_content
             # workaround for pyp5js global variables issue
@@ -110,7 +109,7 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
             for vars in global_vars:
                 nones = 'None, ' * len(vars.split(','))
                 pc = '{} = {}\n{}'.format(vars, nones[:-2], pc)
-            # if the file is the main sketch file ... 
+            # if the file is the main sketch file ...
             if sketch_file[:-3] == temp_sketch:
                 # ... add a setup() and draw() function if size() isn't indented
                 if pc.find('    size(') < 0:
