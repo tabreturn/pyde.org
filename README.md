@@ -33,7 +33,7 @@ You'll need to delete or reorganise the following:
 
 **Just because the transcribing process runs, and the website builds, doesn't mean all of the sketches will work**. This is still, very much, a work in progress. Some sketches will require manual intervention / some rewriting. I plan to work through the [checklist](checklist.txt) whenever I get the time. I've used regex/`replace()` as workarounds for what pyp5js can't handle right now, which might result in odd behavior (for example, if the generate script detects keywords in your sketch comments). You can check the contents of the *examples/_temp* directory to examine what might cause some sketch to fail.
 
-![screenshot.png]
+![](screenshot.png)
 
 ## Todo
 
