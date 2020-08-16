@@ -59,13 +59,18 @@ code, pre {
 }
 
 footer {
-  border-top: 1px solid var(--theme_color_1);
-  font-size:0.9em;
+  box-sizing: border-box;
   margin: auto;
-  margin-top: 5em;
-  margin-bottom: 1.5em;
   max-width: 1000px;
   opacity: 0.7;
+  padding: 2em;
+}
+
+footer #credits {
+  border-top: 1px solid var(--theme_color_1);
+  font-size:0.9em;
+  margin-bottom: 1.5em;
+  margin-top: 3em;
   padding-top: 1em;
 }
 
@@ -80,16 +85,19 @@ footer {
 
 #sketches {
   display: grid;
-  grid-column-gap: 10px;
+  grid-column-gap: 2em;
   grid-template-columns: 1;
 }
 
 #sketches ul {
-  padding-left: 1em;
+  padding: 0;
+  padding-right: 1em;
 }
 
 #sketches li {
-  padding: 0.25em 0;
+  display: inline-block;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 #example .highlight {
@@ -129,22 +137,15 @@ footer {
   h1 {
     font-size: 2.5em;
   }
+}
+
+@media (min-width: 768px) {
 
   #sketches {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 768px) {
-
-  #sketches {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (min-width: 992px) {
 
-  #sketches {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
