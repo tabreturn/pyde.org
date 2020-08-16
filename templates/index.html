@@ -47,7 +47,18 @@
       {% endfor %}
     </ul>
   </div>
-  
+
+  <div>
+    <h2>Math</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Math' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
   <div>
     <h2>Data</h2>
     <ul>

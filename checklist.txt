@@ -76,26 +76,26 @@ W ./Basics/Lists/List/List.pyde
 W ./Basics/Lists/List2D/List2D.pyde
 W ./Basics/Lists/ListObjects/ListObjects.pyde
 
-./Basics/Math/AdditiveWave/AdditiveWave.pyde
-./Basics/Math/Arctangent/Arctangent.pyde
-./Basics/Math/Distance1D/Distance1D.pyde
-./Basics/Math/Distance2D/Distance2D.pyde
-./Basics/Math/DoubleRandom/DoubleRandom.pyde
-./Basics/Math/Graphing2DEquation/Graphing2DEquation.pyde
-./Basics/Math/IncrementDecrement/IncrementDecrement.pyde
-./Basics/Math/Interpolate/Interpolate.pyde
-./Basics/Math/Map/Map.pyde
-./Basics/Math/Noise1D/Noise1D.pyde
-./Basics/Math/Noise2D/Noise2D.pyde
-./Basics/Math/Noise3D/Noise3D.pyde
-./Basics/Math/NoiseWave/NoiseWave.pyde
-./Basics/Math/OperatorPrecedence/OperatorPrecedence.pyde
-./Basics/Math/PolarToCartesian/PolarToCartesian.pyde
-./Basics/Math/Random/Random.pyde
-./Basics/Math/RandomGaussian/RandomGaussian.pyde
-./Basics/Math/Sine/Sine.pyde
-./Basics/Math/SineCosine/SineCosine.pyde
-./Basics/Math/SineWave/SineWave.pyde
+W ./Basics/Math/AdditiveWave/AdditiveWave.pyde
+M ./Basics/Math/Arctangent/Arctangent.pyde
+W ./Basics/Math/Distance1D/Distance1D.pyde
+W ./Basics/Math/Distance2D/Distance2D.pyde
+W ./Basics/Math/DoubleRandom/DoubleRandom.pyde
+D ./Basics/Math/Graphing2DEquation/Graphing2DEquation.pyde
+W ./Basics/Math/IncrementDecrement/IncrementDecrement.pyde
+W ./Basics/Math/Interpolate/Interpolate.pyde
+C ./Basics/Math/Map/Map.pyde
+W ./Basics/Math/Noise1D/Noise1D.pyde
+D ./Basics/Math/Noise2D/Noise2D.pyde
+D ./Basics/Math/Noise3D/Noise3D.pyde
+S ./Basics/Math/NoiseWave/NoiseWave.pyde
+W ./Basics/Math/OperatorPrecedence/OperatorPrecedence.pyde
+W ./Basics/Math/PolarToCartesian/PolarToCartesian.pyde
+W ./Basics/Math/Random/Random.pyde
+W ./Basics/Math/RandomGaussian/RandomGaussian.pyde
+W ./Basics/Math/Sine/Sine.pyde
+W ./Basics/Math/SineCosine/SineCosine.pyde
+C ./Basics/Math/SineWave/SineWave.pyde
 
 ./Basics/Objects/CompositeObjects/CompositeObjects.pyde
 ./Basics/Objects/Inheritance/Inheritance.pyde
