@@ -92,41 +92,51 @@ def add_draw_and_setup_functions(code):
 # transcribe sketches using pyp5js
 
 for temp_sketch in os.listdir(SKETCHBOOK_DIR):
-    sketch_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, temp_sketch+'.py')
-    sketch_read = open(sketch_file, 'rt')
-    sketch_content = sketch_read.read()
 
-    # pyp5js compatibility workarounds
-    sc = sketch_content
-    # workaround for pyp5js global variables issue
-    # https://berinhard.github.io/pyp5js/#known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things
-    # find all global variables
-    global_vars = re.findall('global (.*)', sc)
-    # add placeholder variables to global scope
-    for vars in global_vars:
-        nones = 'None, ' * len(vars.split(','))
-        sc = '{} = {}\n{}'.format(vars, nones[:-2], sc)
-    # add a setup() and draw() function if size() isn't indented
-    if sc.find('    size(') < 0:
-        sc = add_draw_and_setup_functions(sc)
-    # replace size() with createCanvas() function for pyp5js compatibility
-    sc = sc.replace('size(', 'createCanvas(')
-    # replace P3D with WEBGL for pyp5js compatibility
-    sc = sc.replace('P3D)', 'WEBGL)')
-    # remove any instances of beginDraw() and endDraw() for pyp5js compatibility
-    sc = re.sub(r'.*beginDraw\(\)', r'', sc)
-    sc = re.sub(r'.*endDraw\(\)', r'', sc)
-    # replace any instances of mousePressed variables for pyp5js compatibility
-    sc = re.sub(r'mousePressed(?!.*\()', r'mouseIsPressed', sc)
-    # insert pyp5js import line
-    sc = 'from pyp5js import *\n' + sc
-    # replace any println() functions for print()
-    sc = sc.replace('println(', 'print(')
+    for sketch_file in os.listdir(os.path.join(SKETCHBOOK_DIR, temp_sketch)):
 
-    sketch_read.close()
-    sketch_write = open(sketch_file, 'wt')
-    sketch_write.write(sc)
-    sketch_write.close()
+        if sketch_file[-3:] == '.py':
+            py_file = os.path.join(SKETCHBOOK_DIR, temp_sketch, temp_sketch+'.py')
+            py_read = open(py_file, 'rt')
+            py_content = py_read.read()
+
+            # pyp5js compatibility workarounds
+            pc = py_content
+            # workaround for pyp5js global variables issue
+            # https://berinhard.github.io/pyp5js/#known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things
+            # find all global variables
+            global_vars = re.findall('global (.*)', pc)
+            # add placeholder variables to global scope
+            for vars in global_vars:
+                nones = 'None, ' * len(vars.split(','))
+                pc = '{} = {}\n{}'.format(vars, nones[:-2], pc)
+            # if the file is the main sketch file ... 
+            if sketch_file[:-3] == temp_sketch:
+                # ... add a setup() and draw() function if size() isn't indented
+                if pc.find('    size(') < 0:
+                    pc = add_draw_and_setup_functions(pc)
+                # ... replace size() with createCanvas() function for pyp5js compatibility
+                pc = pc.replace('size(', 'createCanvas(')
+                # ... replace P3D with WEBGL for pyp5js compatibility
+                pc = pc.replace('P3D)', 'WEBGL)')
+            # remove any instances of beginDraw() and endDraw() for pyp5js compatibility
+            pc = re.sub(r'.*beginDraw\(\)', r'', pc)
+            pc = re.sub(r'.*endDraw\(\)', r'', pc)
+            # replace any instances of mousePressed variables for pyp5js compatibility
+            pc = re.sub(r'mousePressed(?!.*\()', r'mouseIsPressed', pc)
+            # replace specular functions for pyp5js compatibility
+            pc = pc.replace('lightSpecular(', 'specularColor(')
+            pc = pc.replace('specular(', 'specularMaterial(')
+            # insert pyp5js import line
+            pc = 'from pyp5js import *\n' + pc
+            # replace any println() functions for print()
+            pc = pc.replace('println(', 'print(')
+
+            py_read.close()
+            sketch_write = open(py_file, 'wt')
+            sketch_write.write(pc)
+            sketch_write.close()
+
     transcrypt_sketch(temp_sketch)
 
 # move transcribed sketches to _site directory
