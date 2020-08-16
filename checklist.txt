@@ -1,6 +1,7 @@
 W = working
 C = works with minor changes to .pyde
-M = edit .pyde and replace `with pushMatrix()` for pushMatrix(), popMatrix()
+M = edit .pyde and replace `with pushMatrix():` for pushMatrix(), popMatrix()
+S = edit .pyde and replace `with beginShape():` for beginShape(), endShape()
 ---
 D = doesn't run properly (but transcribes fine)
 ! = doesn't transcribe
@@ -50,29 +51,30 @@ W ./Basics/Form/TriangleStrip/TriangleStrip.pyde
 ./Basics/Image/RequestImage/RequestImage.pyde
 ./Basics/Image/Transparency/Transparency.pyde
 
-./Basics/Input/Clock/Clock.pyde
-./Basics/Input/Constrain/Constrain.pyde
-./Basics/Input/Easing/Easing.pyde
-./Basics/Input/Keyboard/Keyboard.pyde
-./Basics/Input/KeyboardFunctions/KeyboardFunctions.pyde
-./Basics/Input/Milliseconds/Milliseconds.pyde
-./Basics/Input/Mouse1D/Mouse1D.pyde
-./Basics/Input/Mouse2D/Mouse2D.pyde
-./Basics/Input/MouseFunctions/MouseFunctions.pyde
-./Basics/Input/MousePress/MousePress.pyde
-./Basics/Input/MouseSignals/MouseSignals.pyde
-./Basics/Input/StoringInput/StoringInput.pyde
+S ./Basics/Input/Clock/Clock.pyde
+W ./Basics/Input/Constrain/Constrain.pyde
+W ./Basics/Input/Easing/Easing.pyde
+W ./Basics/Input/Keyboard/Keyboard.pyde
+C ./Basics/Input/KeyboardFunctions/KeyboardFunctions.pyde
+W ./Basics/Input/Milliseconds/Milliseconds.pyde
+W ./Basics/Input/Mouse1D/Mouse1D.pyde
+W ./Basics/Input/Mouse2D/Mouse2D.pyde
+W ./Basics/Input/MouseFunctions/MouseFunctions.pyde
+W ./Basics/Input/MousePress/MousePress.pyde
+W ./Basics/Input/MouseSignals/MouseSignals.pyde
+C ./Basics/Input/StoringInput/StoringInput.pyde
 
-./Basics/Lights/Directional/Directional.pyde
-./Basics/Lights/Mixture/Mixture.pyde
-./Basics/Lights/MixtureGrid/MixtureGrid.pyde
-./Basics/Lights/OnOff/OnOff.pyde
-./Basics/Lights/Reflection/Reflection.pyde
-./Basics/Lights/Spot/Spot.pyde
+??? p5.js specularColor() and splotLight() functions don't seem to work in p5.min.js ??? 
+W ./Basics/Lights/Directional/Directional.pyde
+D ./Basics/Lights/Mixture/Mixture.pyde
+D ./Basics/Lights/MixtureGrid/MixtureGrid.pyde
+M ./Basics/Lights/OnOff/OnOff.pyde
+D ./Basics/Lights/Reflection/Reflection.pyde
+D ./Basics/Lights/Spot/Spot.pyde
 
-./Basics/Lists/List/List.pyde
-./Basics/Lists/List2D/List2D.pyde
-./Basics/Lists/ListObjects/ListObjects.pyde
+W ./Basics/Lists/List/List.pyde
+W ./Basics/Lists/List2D/List2D.pyde
+W ./Basics/Lists/ListObjects/ListObjects.pyde
 
 ./Basics/Math/AdditiveWave/AdditiveWave.pyde
 ./Basics/Math/Arctangent/Arctangent.pyde

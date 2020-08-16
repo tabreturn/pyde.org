@@ -71,6 +71,33 @@
   </div>
 
   <div>
+    <h2>Input</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Input' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+
+
+
+
+
+  <div>
+    <h2>Lists</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Lists' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div>
     <h2>Camera</h2>
     <ul>
       {% for data in metadata %}
@@ -81,6 +108,19 @@
     </ul>
   </div>
 
+  <div>
+    <h2>Lights</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Lights' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  
+  <!-- do basics > images -->
+  <!-- do examples.py directory -->
 </div>
 
 {% endblock %}
