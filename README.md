@@ -29,8 +29,9 @@ You'll need to delete or reorganise the following:
 * *Topics/File IO/LoadFile2* (can't import from module collections)
 * *Topics/Pattern* (directory structure incompatible)
 * *Topics/Pulses* (directory structure incompatible)
+* Refer to the [checklist](checklist.txt) for other problematic files
 
-**Just because the transcribing process runs, and the website builds, doesn't mean all of the sketches will work**. This is still, very much, a work in progress. Some sketches will require manual intervention / some rewriting. I plan to work through the [checklist](checklist.txt) whenever I get the time.
+**Just because the transcribing process runs, and the website builds, doesn't mean all of the sketches will work**. This is still, very much, a work in progress. Some sketches will require manual intervention / some rewriting. I plan to work through the [checklist](checklist.txt) whenever I get the time. I've used regex/`replace()` as workarounds for what pyp5js can't handle right now, which might result in odd behavior (for example, if the generate script detects keywords in your sketch comments). You can check the contents of the *examples/_temp* directory to examine what might cause some sketch to fail.
 
 ## Todo
 
