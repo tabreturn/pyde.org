@@ -81,6 +81,15 @@
       {% endfor %}
     </ul>
 
+    <h2>Image</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Image' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+
     <h2>Input</h2>
     <ul>
       {% for data in metadata %}

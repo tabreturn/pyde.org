@@ -44,13 +44,13 @@ W ./Basics/Form/ShapePrimitives/ShapePrimitives.pyde
 C ./Basics/Form/Star/Star.pyde
 W ./Basics/Form/TriangleStrip/TriangleStrip.pyde
 
-./Basics/Image/Alphamask/Alphamask.pyde
-./Basics/Image/BackgroundImage/BackgroundImage.pyde
-./Basics/Image/CreateImage/CreateImage.pyde
-./Basics/Image/LoadDisplayImage/LoadDisplayImage.pyde
-./Basics/Image/Pointillism/Pointillism.pyde
-./Basics/Image/RequestImage/RequestImage.pyde
-./Basics/Image/Transparency/Transparency.pyde
+D ./Basics/Image/Alphamask/Alphamask.pyde
+W ./Basics/Image/BackgroundImage/BackgroundImage.pyde
+D ./Basics/Image/CreateImage/CreateImage.pyde
+C ./Basics/Image/LoadDisplayImage/LoadDisplayImage.pyde
+D ./Basics/Image/Pointillism/Pointillism.pyde
+D ./Basics/Image/RequestImage/RequestImage.pyde
+W ./Basics/Image/Transparency/Transparency.pyde
 
 S ./Basics/Input/Clock/Clock.pyde
 W ./Basics/Input/Constrain/Constrain.pyde
