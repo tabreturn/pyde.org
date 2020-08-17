@@ -44,6 +44,7 @@ You'll need to delete or reorganise the following:
   - [ ] make canvas responsive for mobile
   - [ ] embed p5js canvas in iframe? (mouse coordinates relative to entire window)
   - [ ] workarounds (in generate.py) should ignore commented code
+  - [ ] create workaround for svg `.disableStyle()`, `.getChild()`, `.getChildCount()` methods?
   - [ ] ...
 - [ ] style website
   - [ ] generate sidebar
