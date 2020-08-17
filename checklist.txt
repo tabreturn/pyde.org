@@ -102,12 +102,12 @@ D ./Basics/Objects/Inheritance/Inheritance.pyde
 C ./Basics/Objects/MultipleConstructors/MultipleConstructors.pyde
 W ./Basics/Objects/Objects/Objects.pyde
 
-./Basics/Shape/DisableStyle/DisableStyle.pyde
-./Basics/Shape/GetChild/GetChild.pyde
-./Basics/Shape/LoadDisplayOBJ/LoadDisplayOBJ.pyde
-./Basics/Shape/LoadDisplaySVG/LoadDisplaySVG.pyde
-./Basics/Shape/ScaleShape/ScaleShape.pyde
-./Basics/Shape/ShapeVertices/ShapeVertices.pyde
+D ./Basics/Shape/DisableStyle/DisableStyle.pyde
+D ./Basics/Shape/GetChild/GetChild.pyde
+W ./Basics/Shape/LoadDisplayOBJ/LoadDisplayOBJ.pyde
+W ./Basics/Shape/LoadDisplaySVG/LoadDisplaySVG.pyde
+W ./Basics/Shape/ScaleShape/ScaleShape.pyde
+D ./Basics/Shape/ShapeVertices/ShapeVertices.pyde
 
 W ./Basics/Structure/Coordinates/Coordinates.pyde
 W ./Basics/Structure/CreateGraphics/CreateGraphics.pyde
