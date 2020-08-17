@@ -117,6 +117,15 @@
       {% endfor %}
     </ul>
 
+    <h2>Typography</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Typography' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+
     <h2>Lists</h2>
     <ul>
       {% for data in metadata %}

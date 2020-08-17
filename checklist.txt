@@ -128,9 +128,9 @@ W ./Basics/Transform/RotateXY/RotateXY.pyde
 W ./Basics/Transform/Scale/Scale.pyde
 W ./Basics/Transform/Translate/Translate.pyde
 
-./Basics/Typography/FiveWaysOfWritingText/FiveWaysOfWritingText.pyde
-./Basics/Typography/Letters/Letters.pyde
-./Basics/Typography/Words/Words.pyde
+D ./Basics/Typography/FiveWaysOfWritingText/FiveWaysOfWritingText.pyde
+C ./Basics/Typography/Letters/Letters.pyde
+C ./Basics/Typography/Words/Words.pyde
 
 ./Basics/Web/EmbeddedLinks/EmbeddedLinks.pyde
 ./Basics/Web/LoadingImages/LoadingImages.pyde

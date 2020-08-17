@@ -137,6 +137,8 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
             pc = 'from pyp5js import *\n' + pc
             # replace any println() functions for print()
             pc = pc.replace('println(', 'print(')
+            # replace any createFont() functions for loadFont()
+            pc = pc.replace('createFont(', 'loadFont(')
 
             py_read.close()
             sketch_write = open(py_file, 'wt')
