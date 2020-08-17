@@ -126,6 +126,13 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
             # replace specular functions for pyp5js compatibility
             pc = pc.replace('lightSpecular(', 'specularColor(')
             pc = pc.replace('specular(', 'specularMaterial(')
+            # replace loadShape() and shape() functions for pyp5js compatibility
+            if pc.find('WEBGL)') < 0:
+                pc = pc.replace('loadShape(', 'loadImage(')
+                pc = pc.replace('shape(', 'image(')
+            else:
+                pc = pc.replace('loadShape(', 'loadModel(')
+                pc = pc.replace('shape(', 'model(')
             # insert pyp5js import line
             pc = 'from pyp5js import *\n' + pc
             # replace any println() functions for print()
@@ -141,9 +148,18 @@ for temp_sketch in os.listdir(SKETCHBOOK_DIR):
 # move transcribed sketches to _site directory
 
 for temp_sketch in os.listdir(SKETCHBOOK_DIR):
-    source_dir = os.path.join(SKETCHBOOK_DIR, temp_sketch, 'target')
-    target_dir = os.path.join(SITE_DIR, temp_sketch)
-    shutil.move(source_dir, target_dir)
+    target_dir = os.path.join(SKETCHBOOK_DIR, temp_sketch, 'target')
+    data_dir = os.path.join(SKETCHBOOK_DIR, temp_sketch, 'data')
+    # check if a data directory exists
+    if os.path.exists(data_dir):
+        data_files = os.listdir(data_dir)
+        # copy any files from the data sub-directory into the target directory
+        for data_file in data_files:
+            data_file_path = os.path.join(data_dir, data_file)
+            shutil.copy(data_file_path, target_dir)
+
+    destination_dir = os.path.join(SITE_DIR, temp_sketch)
+    shutil.move(target_dir, destination_dir)
 
 # load templates
 
