@@ -1,10 +1,11 @@
+------------------------------------------------------------------------------
 W = working
 C = works with minor changes to .pyde
 M = edit .pyde and replace `with pushMatrix():` for pushMatrix(), popMatrix()
 S = edit .pyde and replace `with beginShape():` for beginShape(), endShape()
----
 D = doesn't run properly (but transcribes fine)
 ! = doesn't transcribe
+------------------------------------------------------------------------------
 
 ! ./Advanced/KeyCodes/KeyCodes.pyde
 
