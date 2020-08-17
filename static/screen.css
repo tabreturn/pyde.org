@@ -63,8 +63,7 @@ footer {
   margin: auto;
   max-width: 1000px;
   opacity: 0.7;
-  padding: 2em;
-  padding-bottom: 0;
+  padding: 0 2em;
 }
 
 footer #credits {
