@@ -97,10 +97,10 @@ W ./Basics/Math/Sine/Sine.pyde
 W ./Basics/Math/SineCosine/SineCosine.pyde
 C ./Basics/Math/SineWave/SineWave.pyde
 
-./Basics/Objects/CompositeObjects/CompositeObjects.pyde
-./Basics/Objects/Inheritance/Inheritance.pyde
-./Basics/Objects/MultipleConstructors/MultipleConstructors.pyde
-./Basics/Objects/Objects/Objects.pyde
+MS./Basics/Objects/CompositeObjects/CompositeObjects.pyde
+D ./Basics/Objects/Inheritance/Inheritance.pyde
+C ./Basics/Objects/MultipleConstructors/MultipleConstructors.pyde
+W ./Basics/Objects/Objects/Objects.pyde
 
 ./Basics/Shape/DisableStyle/DisableStyle.pyde
 ./Basics/Shape/GetChild/GetChild.pyde
