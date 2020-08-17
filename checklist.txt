@@ -132,8 +132,8 @@ D ./Basics/Typography/FiveWaysOfWritingText/FiveWaysOfWritingText.pyde
 C ./Basics/Typography/Letters/Letters.pyde
 C ./Basics/Typography/Words/Words.pyde
 
-./Basics/Web/EmbeddedLinks/EmbeddedLinks.pyde
-./Basics/Web/LoadingImages/LoadingImages.pyde
+D ./Basics/Web/EmbeddedLinks/EmbeddedLinks.pyde
+D ./Basics/Web/LoadingImages/LoadingImages.pyde
 
 ./Contributed Libraries in Python/Arduino-Firmata/arduino_input/arduino_input.pyde
 ./Contributed Libraries in Python/beads/Lesson01_AudioContext/Lesson01_AudioContext.pyde
