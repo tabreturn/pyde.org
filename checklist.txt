@@ -121,12 +121,12 @@ W ./Basics/Structure/SetupDraw/SetupDraw.pyde
 W ./Basics/Structure/StatementsComments/StatementsComments.pyde
 W ./Basics/Structure/WidthHeight/WidthHeight.pyde
 
-./Basics/Transform/Arm/Arm.pyde
-./Basics/Transform/Rotate/Rotate.pyde
-./Basics/Transform/RotatePushPop/RotatePushPop.pyde
-./Basics/Transform/RotateXY/RotateXY.pyde
-./Basics/Transform/Scale/Scale.pyde
-./Basics/Transform/Translate/Translate.pyde
+M ./Basics/Transform/Arm/Arm.pyde
+W ./Basics/Transform/Rotate/Rotate.pyde
+M ./Basics/Transform/RotatePushPop/RotatePushPop.pyde
+W ./Basics/Transform/RotateXY/RotateXY.pyde
+W ./Basics/Transform/Scale/Scale.pyde
+W ./Basics/Transform/Translate/Translate.pyde
 
 ./Basics/Typography/FiveWaysOfWritingText/FiveWaysOfWritingText.pyde
 ./Basics/Typography/Letters/Letters.pyde
