@@ -65,7 +65,7 @@ W ./Basics/Input/MousePress/MousePress.pyde
 W ./Basics/Input/MouseSignals/MouseSignals.pyde
 C ./Basics/Input/StoringInput/StoringInput.pyde
 
-??? p5.js specularColor() and splotLight() functions don't seem to work in p5.min.js ??? 
+??? p5.js specularColor() and splotLight() functions don't seem to work in p5.min.js ???
 W ./Basics/Lights/Directional/Directional.pyde
 D ./Basics/Lights/Mixture/Mixture.pyde
 D ./Basics/Lights/MixtureGrid/MixtureGrid.pyde
@@ -135,6 +135,7 @@ C ./Basics/Typography/Words/Words.pyde
 D ./Basics/Web/EmbeddedLinks/EmbeddedLinks.pyde
 D ./Basics/Web/LoadingImages/LoadingImages.pyde
 
+??? processing (java) libraries, so these won't work in p5 ???
 ./Contributed Libraries in Python/Arduino-Firmata/arduino_input/arduino_input.pyde
 ./Contributed Libraries in Python/beads/Lesson01_AudioContext/Lesson01_AudioContext.pyde
 ./Contributed Libraries in Python/beads/Lesson04_SamplePlayer/Lesson04_SamplePlayer.pyde
@@ -177,9 +178,9 @@ D ./Basics/Web/LoadingImages/LoadingImages.pyde
 ./Demos/Tests/RedrawTest/RedrawTest.pyde
 ./Demos/Tests/ResizeTest/ResizeTest.pyde
 
-./Python Mode Differences/IntAndFloat/IntAndFloat.pyde
-./Python Mode Differences/LiteralColors/LiteralColors.pyde
-./Python Mode Differences/WithStatements/WithStatements.pyde
+D ./Python Mode Differences/IntAndFloat/IntAndFloat.pyde
+D ./Python Mode Differences/LiteralColors/LiteralColors.pyde
+D ./Python Mode Differences/WithStatements/WithStatements.pyde
 
 ./Topics/AdvancedData/A_List/A_List.pyde
 ./Topics/AdvancedData/LoadSaveTable/LoadSaveTable.pyde
@@ -297,4 +298,3 @@ D ./Basics/Web/LoadingImages/LoadingImages.pyde
 ./Topics/Vectors/AccelerationWithVectors/AccelerationWithVectors.pyde
 ./Topics/Vectors/BouncingBall/BouncingBall.pyde
 ./Topics/Vectors/VectorMath/VectorMath.pyde
-
