@@ -12,9 +12,9 @@
 </header>
 
 <div id="sketches">
-  
+
   <!-- this arrangement needs a refactor ... -->
-  
+
   <div>
     <h2>Structure</h2>
     <ul>
@@ -153,7 +153,148 @@
       {% endfor %}
     </ul>
   </div>
-  
+
+</div>
+
+<div id="sketches">
+
+  <!-- this arrangement needs a refactor ... -->
+
+  <div>
+    <h2>Advanced Data</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Advanced Data' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Animation</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Animation' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Cellular Automata</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Cellular Automata' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Create Shapes</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Create Shapes' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>File IO</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'File IO' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Fractals and L-Systems</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Fractals and L-Systems' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Geometry</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Geometry' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>GUI</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'GUI' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Image Processing</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Image Processing' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Interaction</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Interaction' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Motion</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Motion' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Shaders</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Shaders' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Simulate</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Simulate' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Textures</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Textures' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Vectors</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Vectors' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+    <h2>Other</h2>
+    <ul>
+      {% for data in metadata %}
+      {% if data.sub_category == 'Other' %}
+      <li><a href="{{data.file_name}}/">{{data.title}}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div>
+
+  </div>
+
   <!-- do basics > images -->
   <!-- do examples.py directory -->
 </div>
