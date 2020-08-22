@@ -182,8 +182,8 @@ D ./Python Mode Differences/IntAndFloat/IntAndFloat.pyde
 D ./Python Mode Differences/LiteralColors/LiteralColors.pyde
 D ./Python Mode Differences/WithStatements/WithStatements.pyde
 
-./Topics/AdvancedData/A_List/A_List.pyde
-./Topics/AdvancedData/LoadSaveTable/LoadSaveTable.pyde
+W ./Topics/AdvancedData/A_List/A_List.pyde
+D ./Topics/AdvancedData/LoadSaveTable/LoadSaveTable.pyde
 
 ./Topics/Animation/AnimatedSprite/AnimatedSprite.pyde
 ./Topics/Animation/Sequential/Sequential.pyde
