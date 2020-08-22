@@ -185,8 +185,8 @@ D ./Python Mode Differences/WithStatements/WithStatements.pyde
 W ./Topics/AdvancedData/A_List/A_List.pyde
 D ./Topics/AdvancedData/LoadSaveTable/LoadSaveTable.pyde
 
-./Topics/Animation/AnimatedSprite/AnimatedSprite.pyde
-./Topics/Animation/Sequential/Sequential.pyde
+D ./Topics/Animation/AnimatedSprite/AnimatedSprite.pyde
+C ./Topics/Animation/Sequential/Sequential.pyde
 
 ./Topics/Cellular Automata/GameOfLife/GameOfLife.pyde
 ./Topics/Cellular Automata/Wolfram/Wolfram.pyde
