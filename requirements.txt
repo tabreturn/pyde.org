@@ -4,7 +4,7 @@ cprint==1.1
 Flask==1.1.2
 gunicorn==19.9.0
 itsdangerous==1.1.0
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 mypy==0.782
 mypy-extensions==0.4.3
