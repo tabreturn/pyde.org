@@ -9,7 +9,7 @@ MarkupSafe==1.1.1
 mypy==0.782
 mypy-extensions==0.4.3
 pathtools==0.1.2
-Pygments==2.6.1
+Pygments==2.7.4
 pyp5js==0.4.3
 python-decouple==3.1
 python-slugify==3.0.4
