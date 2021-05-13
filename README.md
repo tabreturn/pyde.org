@@ -6,11 +6,11 @@ This repository hosts the source files for [pyde.org](http://pyde.org), which in
 
 ## Instructions
 
-This is a hand-rolled static site generator built using [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) for templating and [pyp5js](https://berinhard.github.io/pyp5js/) to transcribe processing.py files to p5.js. It uses a modified [Pygments](https://pygments.org/) lexer for syntax highlighting.
+This is a hand-rolled static site generator built using [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) for templating and [pyp5js](https://berinhard.github.io/pyp5js/) to transpile processing.py files to p5.js. It uses a modified [Pygments](https://pygments.org/) lexer for syntax highlighting.
 
 Install the relevant Python 3 libraries (see *requirements.txt*). Run *python3 generate.py* to generate the website (that's output to the *_site* directory).
 
-The *generate.py* script transcribes sketches you place the *examples* directory. It requires them organized as follows: *category > sub-category > sketch > sketch.pyde*. For example: *Basics > Structure > Coordinates > Coordinates.pyde*
+The *generate.py* script transpile sketches you place the *examples* directory. It requires them organized as follows: *category > sub-category > sketch > sketch.pyde*. For example: *Basics > Structure > Coordinates > Coordinates.pyde*
 
 Note that pyp5js has it's [limitations](https://berinhard.github.io/pyp5js/#known-issues-and-differences-to-the-processingpy-and-p5js-ways-of-doing-things), related to differences between Processing.py and p5.js.
 
@@ -31,7 +31,7 @@ You'll need to delete or reorganise the following:
 * *Topics/Pulses* (directory structure incompatible)
 * Refer to the [checklist](checklist.txt) for other problematic files
 
-**Just because the transcribing process runs, and the website builds, doesn't mean all of the sketches will work**. This is still, very much, a work in progress. Some sketches will require manual intervention / some rewriting. I plan to work through the [checklist](checklist.txt) whenever I get the time. I've used regex/`replace()` as workarounds for what pyp5js can't handle right now, which might result in odd behavior (for example, if the generate script detects keywords in your sketch comments). You can check the contents of the *examples/_temp* directory to examine what might cause some sketch to fail.
+**Just because the transpiling process runs, and the website builds, doesn't mean all of the sketches will work**. This is still, very much, a work in progress. Some sketches will require manual intervention / some rewriting. I plan to work through the [checklist](checklist.txt) whenever I get the time. I've used regex/`replace()` as workarounds for what pyp5js can't handle right now, which might result in odd behavior (for example, if the generate script detects keywords in your sketch comments). You can check the contents of the *examples/_temp* directory to examine what might cause some sketch to fail.
 
 ![](screenshot.png)
 
@@ -40,7 +40,7 @@ You'll need to delete or reorganise the following:
 - [ ] integrate pyp5js
   - [x] refactor generate.py
   - [x] generate example directories from md (then compile and move them into _site)
-  - [x] replace p5js functions in transcrypted code to processing.py -- i.e. `createCanvas()` to `size()`
+  - [x] replace p5js functions in transcrypt-ed code to processing.py -- i.e. `createCanvas()` to `size()`
   - [ ] make canvas responsive for mobile
   - [ ] embed p5js canvas in iframe? (mouse coordinates relative to entire window)
   - [ ] workarounds (in generate.py) should ignore commented code
