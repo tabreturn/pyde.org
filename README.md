@@ -2,7 +2,7 @@
 
 *A collection of examples, cheatsheets, and other Processing Python Mode / Processing.py resources*
 
-This repository hosts the source files for [pyde.org](http://pyde.org), which includes Python Mode ports of the Java examples on the official [Processing wesbite](https://processing.org/examples/). Processing includes these examples in Python Mode (accessible in the IDE from the *File > Examples...* menu).
+This repository hosts the source files for [PYDE.ORG](http://pyde.org), which includes Python Mode ports of the Java examples on the official [Processing wesbite](https://processing.org/examples/). Processing includes these examples in Python Mode (accessible in the IDE from the *File > Examples...* menu).
 
 ## Instructions
 
